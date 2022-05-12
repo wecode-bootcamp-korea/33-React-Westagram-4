@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
@@ -43,7 +43,7 @@ function Login() {
           </div>
 
           <div className="facebook_login">
-            <a href="#">Facebook으로 로그인</a>
+            <a href="/login-jy">Facebook으로 로그인</a>
           </div>
 
           <p>비밀번호를 잊으셨나요?</p>

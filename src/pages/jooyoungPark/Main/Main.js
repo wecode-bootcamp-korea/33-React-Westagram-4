@@ -100,54 +100,54 @@ function Main() {
           <div className="main_right_box">
             <div className="story_head">
               <p>스토리</p>
-              <a href="">모두 보기</a>
+              <a href="/main-jy">모두 보기</a>
             </div>
             <ul>
               <li className="user_progile_mini">
-                <a href="">
+                <a href="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
                 </a>
                 <div>
-                  <a href="">alexishyuni</a>
+                  <a href="/main-jy">alexishyuni</a>
                   <p>2시간 전</p>
                 </div>
               </li>
               <li className="user_progile_mini">
-                <a href="">
+                <a href="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
                 </a>
                 <div>
-                  <a href="">alexishyuni</a>
+                  <a href="/main-jy">alexishyuni</a>
                   <p>2시간 전</p>
                 </div>
               </li>
               <li className="user_progile_mini">
-                <a href="">
+                <a href="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
                 </a>
                 <div>
-                  <a href="">alexishyuni</a>
+                  <a href="/main-jy">alexishyuni</a>
                   <p>2시간 전</p>
                 </div>
               </li>
               <li className="user_progile_mini">
-                <a href="">
+                <a href="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
                 </a>
                 <div>
-                  <a href="">alexishyuni</a>
+                  <a href="/main-jy">alexishyuni</a>
                   <p>2시간 전</p>
                 </div>
               </li>
@@ -157,58 +157,58 @@ function Main() {
           <div className="main_right_box">
             <div className="story_head">
               <p>회원님을 위한 추천</p>
-              <a href="">모두 보기</a>
+              <a href="/main-jy">모두 보기</a>
             </div>
             <ul>
               <li className="user_progile_mini">
-                <a href="">
+                <a href="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
                 </a>
                 <div>
-                  <a href="">alexishyuni</a>
+                  <a href="/main-jy">alexishyuni</a>
                   <p>회원님을 위한 추천</p>
                 </div>
                 <button className="follow">팔로우</button>
               </li>
               <li className="user_progile_mini">
-                <a href="">
+                <a href="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
                 </a>
                 <div>
-                  <a href="">__g90ng_dm</a>
+                  <a href="/main-jy">__g90ng_dm</a>
                   <p>회원님을 위한 추천</p>
                 </div>
                 <button className="follow">팔로우</button>
               </li>
               <li className="user_progile_mini">
-                <a href="">
+                <a href="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
                 </a>
                 <div>
-                  <a href="">hsu_koreanart2021</a>
+                  <a href="/main-jy">hsu_koreanart2021</a>
                   <p>회원님을 위한 추천</p>
                 </div>
 
                 <button className="follow">팔로우</button>
               </li>
               <li className="user_progile_mini">
-                <a href="">
+                <a href="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
                 </a>
                 <div>
-                  <a href="">kimmy_cafe</a>
+                  <a href="/main-jy">kimmy_cafe</a>
                   <p>회원님을 위한 추천</p>
                 </div>
                 <button className="follow">팔로우</button>
