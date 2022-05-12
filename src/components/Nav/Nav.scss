@@ -1,0 +1,141 @@
+/* nav */
+
+nav {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  border-bottom: 1px solid #b9b9b9;
+  z-index: 10;
+
+  .navBack {
+    justify-content: center;
+    margin: auto;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    .navImgTitle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .navImg {
+        width: 30px;
+        height: 30px;
+        margin: 0px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .navTitle {
+        font-size: 30px;
+        font-family: 'Lobster', cursive;
+        cursor: default;
+        cursor: pointer;
+      }
+    }
+
+    .navInputFlex {
+      width: 650px;
+
+      .navInputBox {
+        width: 250px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        margin: auto;
+        background-color: #f0eeee;
+        border-radius: 10px;
+      }
+
+      .navInput {
+        width: 200px;
+        border: none;
+        text-align: center;
+        overflow: auto;
+        font-size: 15px;
+        background-color: #f0eeee;
+        outline: none;
+        line-height: 40px;
+      }
+
+      .searchIcon {
+        font-size: 15px;
+        color: #817e7e;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 700px) {
+        .navInputBox {
+          display: none;
+        }
+      }
+    }
+
+    .navIconFlex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .navIcon {
+        font-size: 25px;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+    }
+
+    /* Id search */
+
+    .searchId {
+      background-color: white;
+      width: 300px;
+      height: 250px;
+      position: absolute;
+      top: 55px;
+      border: 1px solid #eee;
+      text-align: left;
+      overflow: auto;
+      border-radius: 5px;
+
+      .searchId::-webkit-scrollbar {
+        width: 5px;
+      }
+      .searchId::-webkit-scrollbar-thumb {
+        background-color: lightgrey;
+        height: 17%;
+        border-radius: 20px;
+      }
+      .searchId::-webkit-scrollbar-track {
+        background-color: white;
+      }
+
+      .searchIdInfo {
+        margin-left: 20px;
+      }
+
+      .searchBox {
+        margin: 20px 10px;
+        display: flex;
+        align-items: center;
+
+        .searchImg {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+
+        .searchText {
+          font-size: 16px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
