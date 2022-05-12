@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
+import SuggestUser from './Aside/JongeunComponent/SuggestUser';
 
 function Main() {
   return (
@@ -113,71 +114,26 @@ function Main() {
               <div className="see-all">See All</div>
             </div>
             <div className="suggest_user">
-              <div className="suggest_box">
-                <div className="suggest_profile_img">
-                  <img
-                    src="https://img.animalplanet.co.kr/news/2020/06/13/700/30jarcn5b5o82bpbxn24.jpg"
-                    alt=""
-                  />
-                  <div className="suggest_name">
-                    <div className="suggest_id">Pocket_master</div>
-                    <div className="suggest_nickname">Digdag</div>
-                  </div>
-                </div>
-                <div className="suggest_follow">Follow</div>
-              </div>
-              <div className="suggest_box">
-                <div className="suggest_profile_img">
-                  <img
-                    src="https://tistory3.daumcdn.net/tistory/4492954/attach/9cf3289dac274622aa045bc3296bea6f"
-                    alt=""
-                  />
-                  <div className="suggest_name">
-                    <div className="suggest_id">Pocket_master</div>
-                    <div className="suggest_nickname">Squirtle</div>
-                  </div>
-                </div>
-                <div className="suggest_follow">Follow</div>
-              </div>
-              <div className="suggest_box">
-                <div className="suggest_profile_img">
-                  <img
-                    src="https://t1.daumcdn.net/cfile/tistory/99BB433359E8C2BF32"
-                    alt=""
-                  />
-                  <div className="suggest_name">
-                    <div className="suggest_id">Pocket_master</div>
-                    <div className="suggest_nickname">Charmander</div>
-                  </div>
-                </div>
-                <div className="suggest_follow">Follow</div>
-              </div>
-              <div className="suggest_box">
-                <div className="suggest_profile_img">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVPMPZMkSavqLjMiCosyWul1m7kEofgsZ-rxJD9M_5Ah-s5KprLbGFNXytqxF9MD5gd64&usqp=CAU"
-                    alt=""
-                  />
-                  <div className="suggest_name">
-                    <div className="suggest_id">Pocket_master</div>
-                    <div className="suggest_nickname">Bulbasaur</div>
-                  </div>
-                </div>
-                <div className="suggest_follow">Follow</div>
-              </div>
-              <div className="suggest_box">
-                <div className="suggest_profile_img">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsUmwOIg9waNT1-A5WlKDzMzBDTfPwL6vs7rii5D4Pf0-pa91g_AZX1Hn3srxfQJ7D7v8&usqp=CAU"
-                    alt=""
-                  />
-                  <div className="suggest_name">
-                    <div className="suggest_id">Pocket_master</div>
-                    <div className="suggest_nickname">Pikachu</div>
-                  </div>
-                </div>
-                <div className="suggest_follow">Follow</div>
-              </div>
+              <SuggestUser
+                name="Digdag"
+                src="https://img.animalplanet.co.kr/news/2020/06/13/700/30jarcn5b5o82bpbxn24.jpg"
+              />
+              <SuggestUser
+                name="Squirtle"
+                src="https://i.pinimg.com/280x280_RS/13/d3/2b/13d32b4e61c1f4b8db589e46b3e1b857.jpg"
+              />
+              <SuggestUser
+                name="Charmander"
+                src="https://t1.daumcdn.net/cfile/tistory/99BB433359E8C2BF32"
+              />
+              <SuggestUser
+                name="Bulbasaur"
+                src="https://pbs.twimg.com/tweet_video_thumb/DscSCn5V4AExZzB.jpg"
+              />
+              <SuggestUser
+                name="Pikachu"
+                src="https://bleedingcool.com/wp-content/uploads/2021/06/Pikachu-color-model-publicity-cel-1200x628.jpg"
+              />
             </div>
 
             <div className="right_foot">
