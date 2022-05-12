@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
 import Nav from '../../../components/Nav/Nav.js';
 import './Main.scss';
 import {
@@ -8,36 +8,100 @@ import {
   FaRegPaperPlane,
   FaRegBookmark,
   FaBackspace,
+  FaHeart,
 } from 'react-icons/fa';
 import { useState } from 'react';
 import Aside from './Aside/Aside.js';
+import cn from 'classnames';
 
 function Main() {
-  let [chatValue, setChatValue] = useState(['Good']);
-  let [chatInputValue, setChatInputValue] = useState('');
-  let [color, setColor] = useState(['black']);
+  const [chats, setChats] = useState([
+    {
+      id: 1,
+      text: '리액트의 기초 알아보기',
+      like: true,
+    },
+    {
+      id: 2,
+      text: '컴포넌트 스타일링해 보기',
+      like: true,
+    },
+    {
+      id: 3,
+      text: '일정 관리 앱 만들어 보기',
+      like: false,
+    },
+  ]);
 
-  const isValid = chatInputValue === '';
+  const [value, setValue] = useState('');
+  const onChange = useCallback(e => {
+    setValue(e.target.value);
+  }, []);
 
-  function post() {
-    if (chatInputValue !== '') {
-      let copyChatValue = [...chatValue];
-      copyChatValue.push(chatInputValue);
-      setChatValue(copyChatValue);
-      setChatInputValue('');
+  const nextId = useRef(4);
 
-      let copyColor = [...color];
-      copyColor.push('black');
-      setColor(copyColor);
-    }
-  }
+  const onInsert = useCallback(
+    text => {
+      const chat = {
+        id: nextId,
+        text,
+        like: false,
+      };
+      setChats(chats.concat(chat));
+      nextId.current += 1;
+      console.log(chats);
+    },
+    [chats]
+  );
 
-  function postEnter(e) {
-    if (e.code === 'Enter' && chatInputValue !== '') {
-      post();
-      setChatInputValue('');
-    }
-  }
+  const onClick = useCallback(() => {
+    onInsert(value);
+    setValue('');
+    // e.prevendDefault();
+  }, [onInsert, value]);
+
+  const onRemove = useCallback(
+    id => {
+      setChats(chats.filter(chat => chat.id !== id));
+    },
+    [chats]
+  );
+
+  const onLike = useCallback(
+    id => {
+      setChats(
+        chats.map(chat =>
+          chat.id === id ? { ...chat, like: !chat.like } : chat
+        )
+      );
+    },
+    [chats]
+  );
+  // let [chatValue, setChatValue] = useState(['Good']);
+  // let [chatInputValue, setChatInputValue] = useState('');
+  // let [color, setColor] = useState(['black']);
+
+  // const isValid = chatInputValue === '';
+
+  // function post() {
+  //   if (chatInputValue !== '') {
+  //     let copyChatValue = [...chatValue];
+  //     copyChatValue.push(chatInputValue);
+  //     setChatValue(copyChatValue);
+  //     setChatInputValue('');
+
+  //     let copyColor = [...color];
+  //     copyColor.push('black');
+  //     setColor(copyColor);
+  //   }
+  // }
+
+  // function postEnter(e) {
+  //   if (e.code === 'Enter' && chatInputValue !== '') {
+  //     post();
+  //     setChatInputValue('');
+  //   }
+  // }
 
   return (
     <>
@@ -77,7 +141,7 @@ function Main() {
                 <span className="liksNickname">hengxi</span>님 외 <span>4</span>
                 명이 좋아합니다.
               </p>
-              {chatValue.map((a, i) => {
+              {/* {chatValue.map((a, i) => {
                 return (
                   <div key={i} className="articlePush">
                     <span className="articleNickname">hengxi </span>
@@ -109,21 +173,28 @@ function Main() {
                     </div>
                   </div>
                 );
-              })}
+              })} */}
+              {chats.map(chat => (
+                <ChatList
+                  chat={chat}
+                  key={chat.id}
+                  onRemove={onRemove}
+                  onLike={onLike}
+                />
+              ))}
             </div>
 
             <div className="articleInputBox">
               <input
-                value={chatInputValue}
-                onKeyPress={postEnter}
-                onChange={e => {
-                  setChatInputValue(e.target.value);
-                }}
+                value={value}
+                onChange={onChange}
                 className="articleInput"
-                type="text"
                 placeholder="댓글달기..."
               />
-              <button onClick={post} disabled={isValid} className="articlePost">
+              {/* <button onClick={post} disabled={isValid} className="articlePost">
+                게시
+              </button> */}
+              <button onClick={onClick} type="submit" className="articlePost">
                 게시
               </button>
             </div>
@@ -134,4 +205,34 @@ function Main() {
     </>
   );
 }
+
+const ChatList = ({ chat, onRemove, onLike }) => {
+  const { id, text, like } = chat;
+
+  return (
+    <div className="articlePush">
+      <span className="articleNickname">hengxi </span>
+      <span className="articleComment">{text}</span>
+      <div className="likeIcon">
+        <p className="articleTime">1분전</p>
+        <div
+          key={id}
+          className={cn('likebox', { likes: like })}
+          onClick={() => onLike(id)}
+        >
+          {like ? (
+            <FaHeart className="likeIcons" />
+          ) : (
+            <FaRegHeart className="likeIcons" />
+          )}
+        </div>
+        <FaBackspace
+          onClick={() => onRemove(id)}
+          className="likeIcons likeIconsDelete"
+        />
+      </div>
+    </div>
+  );
+};
+
 export default Main;

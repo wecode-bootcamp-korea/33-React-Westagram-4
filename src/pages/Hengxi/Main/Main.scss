@@ -156,3 +156,11 @@ section {
     }
   }
 }
+
+.likebox {
+  color: black;
+  cursor: pointer;
+  &.likes {
+    color: red;
+  }
+}
