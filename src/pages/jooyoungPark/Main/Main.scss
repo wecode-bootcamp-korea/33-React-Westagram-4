@@ -22,44 +22,6 @@
     font-weight: bold;
   }
 
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    border-bottom: 1px solid #dbdbdb;
-    nav {
-      max-width: 1000px;
-      margin: 0 auto;
-      @include flex-between;
-      height: 60px;
-      line-height: 60px;
-
-      .logo {
-        font-family: 'Lobster', cursive;
-        font-size: 25px;
-      }
-    }
-
-    input {
-      width: 250px;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      background-color: #ededed;
-      font-size: 15px;
-    }
-
-    .icon_box {
-      img {
-        width: 24px;
-        height: 24px;
-        margin-left: 15px;
-      }
-    }
-  }
-
   main {
     display: flex;
     max-width: 1000px;

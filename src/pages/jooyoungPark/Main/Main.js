@@ -1,5 +1,6 @@
 import React from 'react';
 // import { Link, useNavigate } from 'react-router-dom';
+import Nav from '../../../components/Nav/Nav.js';
 import './Main.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
@@ -8,30 +9,8 @@ import '../../../styles/variables.scss';
 function Main() {
   return (
     <div className="main">
-      <header>
-        <nav>
-          <h1 className="logo">
-            <a href="#">Westagram</a>
-          </h1>
+      <Nav />
 
-          <input type="text" placeholder="검색" />
-
-          <div className="icon_box">
-            <a href="#">
-              <img src="images/jooyoungPark/Main/explore.png" alt="탐색기" />
-            </a>
-            <a href="#">
-              <img src="images/jooyoungPark/Main/heart.png" alt="좋아요" />
-            </a>
-            <a href="#">
-              <img
-                src="images/jooyoungPark/Main/profile.png"
-                alt="나의페이지"
-              />
-            </a>
-          </div>
-        </nav>
-      </header>
       <main>
         <div className="feed">
           <article className="post">
