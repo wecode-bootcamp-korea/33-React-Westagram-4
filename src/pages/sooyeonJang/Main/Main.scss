@@ -1,444 +1,449 @@
 $white: #fff;
 
 * {
-    background-color: #f8f8f8;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f8f8f8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 button {
-    .icon {
-        cursor: pointer;
-    }
-} 
+  .icon {
+    cursor: pointer;
+  }
+}
 
 form {
-    background-color: $white;
+  background-color: $white;
 }
 
 .navbar {
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: $white;
-    border-bottom: 1px solid #dfdfdf;
-    padding: 5px 0;
-    display: flex;
-    justify-content: center;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: $white;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-wrapper {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $white;
-    /* max-width: 1000px; */
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  /* max-width: 1000px; */
 }
 
 .logo {
-    display: inline-block;
-    height: 70%;
-    margin-top: 8px;
-    font-family: 'Lobster', cursive;
-    font-weight: 600px;
-    font-size: larger;
-    background-color: $white;
+  display: inline-block;
+  height: 70%;
+  margin-top: 8px;
+  font-family: 'Lobster', cursive;
+  font-weight: 600px;
+  font-size: larger;
+  background-color: $white;
 }
 
 .search-box {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 250px;
-    height: 30px;
-    background: #f0f0f0;
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    background-image: url(./magnifier.png);
-    background-repeat: no-repeat;
-    background-size: 15px;
-    background-position: left center;
-    background-position-x: 6%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 30px;
+  background: #f0f0f0;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  background-image: url(./Aside/magnifier.png);
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: left center;
+  background-position-x: 6%;
 
-    &::placeholder {
-     color: darkgray;
-     padding-left: 40px;
-     font-weight: 300;
-    }
+  &::placeholder {
+    color: darkgray;
+    padding-left: 40px;
+    font-weight: 300;
+  }
 }
 
 .nav-icons {
-    height: 22px;
-    position: relative;
-    background-color: $white;
+  height: 22px;
+  position: relative;
+  background-color: $white;
 }
 
 .icon {
-    height: 100%;
-    display: inline-block;
-    cursor: pointer;
-    margin: 0 10px;
-    background-color: #fff;
+  height: 100%;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 10px;
+  background-color: #fff;
 }
 
 .main {
-    width: 100%;
-    padding: 40px 0;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  padding: 40px 0;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper {
-    width: 70%;
-    max-width: 1000px;
-    display: grid;
-    grid-template-columns: 60% 40%;
-    grid-gap: 30px;
+  width: 70%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-gap: 30px;
 }
 
 .left-col {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .status-wrapper {
-    width: 80;
-    height: 120px;
-    background: $white;
-    border: 1px solid #dfdfdf;
-    border-radius: 2px;
-    padding: 10px;
-    padding-right: 0;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    overflow-x: auto;
+  width: 80;
+  height: 120px;
+  background: $white;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  padding: 10px;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: auto;
 
-    &::-webkit-scrollbar{
-        display: none;
-    }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .status-card {
-    background: $white;
-    width: 80px;
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-    /* flex: 0 0 auto; */
+  background: $white;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  /* flex: 0 0 auto; */
 }
 
 .status-pic {
-    /* overflow: hidden; */
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    padding: 3px;
-    background: linear-gradient(45deg, rgb(255, 230, 0), rgb(255, 0, 128) 80%);
+  /* overflow: hidden; */
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(45deg, rgb(255, 230, 0), rgb(255, 0, 128) 80%);
 
-    img {
-        width: 70px;
+  img {
+    width: 70px;
     height: 70px;
     border-radius: 50%;
     object-fit: cover;
     border-radius: 2px solid $white;
-    }
+  }
 }
 
 .status-name {
-    /* overflow: hidden; */
-    width: 100%;
-    font-size: 11px;
-    text-align: center;
-    margin-top: 5px;
-    background: $white;
+  /* overflow: hidden; */
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 5px;
+  background: $white;
 }
 
 .post {
-    width: 100%;
-    height: auto;
-    background: $white;
-    border: 1px solid #dfdfdf;
-    margin-top: 40px;
+  width: 100%;
+  height: auto;
+  background: $white;
+  border: 1px solid #dfdfdf;
+  margin-top: 40px;
 }
 
 .post-info {
-    box-sizing: border-box;
-    width: 100%;
-    height: 60px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: $white;
+  position: relative;
+
+  .user {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
     background-color: $white;
-    position: relative;
+  }
 
-    .user {
-      display: flex;
-      align-items: center;
-      background-color: $white;
+  .profile-pic {
+    padding: 0;
+    background: none;
+    img {
+      border: none;
+      border-radius: 50%;
+      width: 100%;
+      height: 35px;
+      width: 35px;
+      object-fit: cover;
     }
+  }
 
-    .profile-pic {
-      padding: 0;
-      background: none;
-        img {
-            border: none;
-            border-radius: 50%;
-            width: 100%;
-            height: 35px;
-            width: 35px;
-            object-fit: cover;
-        }
-    }
+  .username {
+    width: auto;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 15px;
+    background-color: $white;
+  }
 
-    .username {
-        width: auto;
-        font-weight: bold;
-        font-size: 14px;
-        margin-left: 15px;
-        background-color: $white;
-    }
-
-    .options {
-        height: 10px;
-        cursor: pointer;
-        background-color: $white;
-        position: absolute;
-        right: 15px;
-    }
+  .options {
+    height: 10px;
+    cursor: pointer;
+    background-color: $white;
+    position: absolute;
+    right: 15px;
+  }
 }
 
 .post-image {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
 }
 
 .post-content {
-    width: 80%;
-    padding: 20px;
-    background-color: $white;
+  width: 80%;
+  padding: 20px;
+  background-color: $white;
 }
 
 .likes-count {
-    font-weight: 500;
-    font-size: 15px;
-    background-color: $white;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: $white;
 }
 
 .description {
-    margin: 10px 0;
-    font-size: 16px;
-    line-height: 20px;
-    background-color: $white;
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: $white;
 
-    span {
-        font-weight: 600;
-        font-size: 16px;
-        margin-right: 10px;
-        background-color: $white;
-    }
+  span {
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 10px;
+    background-color: $white;
+  }
 }
 
 .post-time {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 11px;
-    background-color: $white;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 11px;
+  background-color: $white;
 }
 
 .comment-place {
+  background: $white;
+  font-size: 15px;
+
+  p {
     background: $white;
-    font-size: 15px;
+    margin: 3px;
+    display: inline-block;
+    width: 420px;
+  }
 
-    p {
-        background: $white;
-        margin: 3px; 
-        display: inline-block;
-        width: 420px;
+  span {
+    font-weight: 500;
+  }
+
+  .cmt-btn {
+    border: none;
+    background: $white;
+    padding: 0;
+    margin-right: 3px;
+
+    img {
+      width: 13px;
+      background: $white;
     }
-
-    span {
-        font-weight: 500;
-    }
-
-    .cmt-btn {
-        border: none;
-        background: $white;
-        padding: 0;
-        margin-right: 3px;
-
-        img {
-            width: 13px;
-            background: $white;
-        }
-    }
+  }
 }
 
 .reaction-wrapper {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    margin-top: -20px;
-    background-color: $white;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-top: -20px;
+  background-color: $white;
 
-    .r-icon {
-        height: 25px;
-        margin: 0;
-        margin-right: 15px;
-        background-color: $white;
-        cursor: pointer;
-    }
+  .r-icon {
+    height: 25px;
+    margin: 0;
+    margin-right: 15px;
+    background-color: $white;
+    cursor: pointer;
+  }
 }
 
 .comment-wrapper {
-    width: 100%;
-    height: 50px;
-    border: 1px solid #dfdfdf;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $white;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #dfdfdf;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
 
-    .smile-icon {
-        height: 30px;
-        margin: 0 10px;
-        background-color: $white;
-    }
+  .smile-icon {
+    height: 30px;
+    margin: 0 10px;
+    background-color: $white;
+  }
 }
 
 .comment-box {
-    width: 80%;
-    height: 95%;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    background-color: $white;
+  width: 80%;
+  height: 95%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: $white;
 }
 
 .comment-btn {
-    width: 70px;
-    height: 100%;
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    color: royalblue; /*change opacity when activated*/
-    cursor: pointer;
+  width: 70px;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: royalblue; /*change opacity when activated*/
+  cursor: pointer;
 }
 
 .right-col {
-    padding: 20px;
+  padding: 20px;
 }
 
 .profile-card {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    margin-top: 20px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
 
-    .username {
-        font-weight: 450;
-        font-size: 16px;
+  .username {
+    font-weight: 450;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .card-pic {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+
+    img {
+      width: 100%;
+      border: 1px solid lightgrey;
+      border-radius: 50%;
     }
-
-    .card-pic {
-        width: 60px;
-        height: 60px;
-        margin-right: 20px;
-
-        img {
-            width: 100%;
-            border: 1px solid lightgrey;
-            border-radius: 50%;
-        }
-    }
+  }
 }
 
 .sub-text {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 13px;
-    font-weight: 450;
-    margin-top: -13px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  font-weight: 450;
+  margin-top: -13px;
 }
 
 .suggestion {
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: 600;
-    margin: 30px 0 5px 0;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  margin: 30px 0 20px 0;
 }
 
 .suggestion-profile {
-    .suggestion-pic {
-        margin-right: 10px;
-        display: flex;
+  .suggestion-pic {
+    margin-right: 10px;
+    margin-bottom: 17px;
+    display: flex;
 
-        img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
     }
+  }
 }
 
 .suggestion-name {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: -10px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: -15px;
 }
 
 .suggestion-text {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  margin-top: 5px;
 }
 
 .follow-btn {
-    color: royalblue;
-    border: none;
-    font-size: 13px;
+  color: royalblue;
+  border: none;
+  font-size: 13px;
+  margin-top: -10px;
 }
 
 .suggestion-profile {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 250px;
-    margin-bottom: -10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  margin-bottom: -10px;
 }
 
 .suggestion-wrapper {
-    &:first-child {
-        flex-grow: 1;
-    }
+  &:first-child {
+    flex-grow: 1;
+  }
 
-    &:nth-child(2) {
-        flex-grow: 1;
-    }
+  &:nth-child(2) {
+    flex-grow: 1;
+  }
 }
 
 @media (max-width: 1200px) {
-    .search-box {
-        display: none;
-    }
+  .search-box {
+    display: none;
+  }
 }
 
 @media (max-width: 820px) {
-    .right-col, .nav-icons {
-        display: none;
-    }
-    .nav-wrapper {
-        width: 30%;
-    }
+  .right-col,
+  .nav-icons {
+    display: none;
+  }
+  .nav-wrapper {
+    width: 30%;
+  }
 }
-
