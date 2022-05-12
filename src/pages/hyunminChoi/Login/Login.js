@@ -1,7 +1,43 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Login.scss';
 
 function Login() {
-  return <div>로그인페이지</div>;
+  const navigate = useNavigate();
+
+  const goToMain = () => {
+    navigate('/main-hm');
+  };
+
+  return (
+    <div class="test">
+      <section>
+        <div className="loginWrapper">
+          <div className="loginContainer">
+            <div className="logo lobsterFont">
+              <p>Westagram</p>
+            </div>
+            <div className="member">
+              <input
+                type="text"
+                id="id"
+                placeholder="전화번호, 사용자 이름 또는 이메일"
+              />
+              <input type="passwword" id="password" placeholder="비밀번호" />
+            </div>
+            <div className="login">
+              <button type="button" className="loginBtn" onClick={goToMain}>
+                로그인
+              </button>
+            </div>
+            <div className="help">
+              <p>비밀번호를 잊으셨나요?</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }
 
 export default Login;
