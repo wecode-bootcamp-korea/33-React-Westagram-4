@@ -1,0 +1,99 @@
+@import '../../../styles/variables.scss';
+
+$border-style: 1px solid #ededed;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  .login_form {
+    height: 100vh;
+    @include flex-center;
+
+    .login_container {
+      width: 350px;
+      height: 400px;
+      margin: 0 auto;
+      border: $border-style;
+      background-color: white;
+      text-align: center;
+      padding: 40px 40px;
+
+      p {
+        color: rgba(0, 55, 107);
+        font-size: 12px;
+        line-height: 16px;
+        margin-top: 12px;
+      }
+
+      header {
+        h1 {
+          @include titleFont;
+          // font-family: 'Lobster', cursive;
+          font-size: 40px;
+          margin-bottom: 50px;
+        }
+      }
+
+      form {
+        input {
+          display: block;
+          width: 100%;
+          border: $border-style;
+          border-radius: 5px;
+          padding: 10px 5px;
+          margin-bottom: 5px;
+          background-color: #fafafa;
+        }
+
+        button {
+          width: 100%;
+          padding: 5px;
+          margin: 10px 0;
+          font-size: 14px;
+          font-weight: bold;
+          color: white;
+          background-color: rgba(0, 147, 245, 0.5);
+          border: none;
+          border-radius: 5px;
+        }
+
+        button.active {
+          background-color: rgba(0, 147, 245);
+        }
+      }
+
+      .and {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: gray;
+        margin: 15px 0;
+
+        span {
+          font-size: 13px;
+        }
+
+        hr {
+          width: 100px;
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .facebook_login {
+        a {
+          font-weight: bold;
+          color: #385185;
+        }
+      }
+    }
+  }
+}
