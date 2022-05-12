@@ -1,0 +1,158 @@
+/* aside */
+
+aside {
+  margin-top: 20px;
+  width: 300px;
+  margin-left: 30px;
+
+  .asideFixed {
+    position: fixed;
+
+    .asideProfile {
+      display: flex;
+      text-align: left;
+      align-items: center;
+
+      .aisdeProfileBox {
+        border: 1px solid #cfcccc;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+
+        .aisdeProfileImg {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+
+      .asideProfileIdBox {
+        margin-top: 15px;
+
+        .aisdeProfileId {
+          margin-bottom: 0;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        .aisdeProfileName {
+          margin-top: 0;
+          color: gray;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .asideStory {
+      width: 300px;
+      border: 1px solid rgba(180, 180, 180, 0.933);
+      margin: 20px 0;
+      border-radius: 3px;
+
+      .storyTitleBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+      }
+
+      .storyTitle {
+        color: gray;
+      }
+
+      .storyTitleContent {
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .storyProfile {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  aside {
+    display: none;
+  }
+}
+
+.storyProfiles {
+  display: flex;
+  margin: 13px 0 13px 10px;
+  align-items: center;
+
+  .storyProfilesImgBox {
+    border-radius: 50%;
+    border: 2px solid #c536a4;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 10px;
+
+    .storyProfilesImg {
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+    }
+
+    .storyProfileId {
+      margin-bottom: 0;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .storyProfileTime {
+      margin-top: 0;
+      font-size: 13px;
+      color: gray;
+    }
+  }
+}
+
+.storyProfiles {
+  display: flex;
+  margin: 10px 0 10px 10px;
+
+  .recomendBox {
+    margin-left: 10px;
+  }
+
+  .storyProfilesImg {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+
+  .storyProfileId {
+    margin-bottom: 0;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .storyProfileTime {
+    margin-top: 0;
+    font-size: 13px;
+    color: gray;
+  }
+
+  .follow {
+    font-size: 12px;
+    cursor: pointer;
+    color: #1995f6;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+}
