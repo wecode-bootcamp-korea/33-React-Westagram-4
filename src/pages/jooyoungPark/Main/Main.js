@@ -17,16 +17,16 @@ function Main() {
             <div className="user_post_wrap">
               <div className="user_info">
                 <div className="user_img">
-                  <a href="#">
+                  <a href="/main-jy">
                     <img
                       src="images/jooyoungPark/Main/mini_profile.jpg"
-                      alt="#"
+                      alt="/main-jy"
                     />
                   </a>
                 </div>
                 <div className="user_name">
-                  <a href="#">wecode_bootcamp</a>
-                  <a href="#">WeCode - 위코드</a>
+                  <a href="/main-jy">wecode_bootcamp</a>
+                  <a href="/main-jy">WeCode - 위코드</a>
                 </div>
                 <button className="more_btn">더보기</button>
               </div>
@@ -51,10 +51,10 @@ function Main() {
                   <button>북마크</button>
                 </div>
                 <div className="like_count">
-                  <a href="#">
+                  <a href="/main-jy">
                     <img
                       src="images/jooyoungPark/Main/mini_profile.jpg"
-                      alt="#"
+                      alt="/main-jy"
                     />
                   </a>
                   <span className="like_desc">
@@ -84,13 +84,16 @@ function Main() {
         <div className="main_right">
           <div className="user_info user_info_right">
             <div className="user_info_main">
-              <a href="#">
-                <img src="images/jooyoungPark/Main/mini_profile.jpg" alt="#" />
+              <a href="/main-jy">
+                <img
+                  src="images/jooyoungPark/Main/mini_profile.jpg"
+                  alt="/main-jy"
+                />
               </a>
             </div>
             <div className="user_name">
-              <a href="#">wecode_bootcamp</a>
-              <a href="#">WeCode - 위코드</a>
+              <a href="/main-jy">wecode_bootcamp</a>
+              <a href="/main-jy">WeCode - 위코드</a>
             </div>
           </div>
 
