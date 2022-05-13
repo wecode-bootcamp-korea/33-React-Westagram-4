@@ -1,0 +1,294 @@
+@import '../../../styles/variables.scss';
+
+/* ********** MAIN ********** */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  height: 100vh;
+
+  .main {
+    display: flex;
+    width: 70%;
+
+    /* feed 영역 */
+    .feeds {
+      width: 60%;
+
+      /* 게시물 영역 */
+      .content {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        border: 1px solid #dbdbdb;
+
+        .top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 70px;
+
+          .topProfile {
+            @include flexCenter;
+            margin: 0 10px;
+            vertical-align: middle;
+
+            img {
+              width: 30px;
+              height: 30px;
+              border-radius: 60%;
+              text-align: center;
+            }
+
+            div {
+              margin-left: 10px;
+              font-weight: bold;
+            }
+          }
+
+          .topService {
+            margin-right: 15px;
+            justify-content: flex-end;
+          }
+        }
+
+        .mid {
+          img {
+            width: 100%;
+          }
+        }
+
+        .bottom {
+          display: flex;
+          flex-direction: column;
+          font-size: 14px;
+
+          > * {
+            /* display: inline-block;
+                      vertical-align: middle; */
+            padding-left: 16px;
+            margin-top: 5px;
+          }
+
+          .convenience {
+            display: flex;
+            align-items: center;
+            height: 40px;
+
+            span:nth-child(1) {
+              flex: 1;
+            }
+
+            span:nth-child(2) {
+              flex: 1;
+            }
+
+            span:nth-child(3) {
+              flex: 1;
+            }
+
+            span:nth-child(4) {
+              flex: 8;
+              text-align: right;
+              margin-right: 15px;
+            }
+          }
+
+          .like {
+            height: 18px;
+            font-weight: bold;
+          }
+
+          .commentBox {
+            .userCommentBox {
+              position: relative;
+              padding-bottom: 5px;
+
+              .userName {
+                display: inline-block;
+                margin-right: 5px;
+                font-weight: bold;
+              }
+
+              .userComment {
+                display: inline-block;
+                word-break: break-all;
+              }
+
+              .userHeart {
+                display: inline-block;
+                position: absolute;
+                right: 40px;
+                cursor: pointer;
+                color: black;
+              }
+
+              .delete {
+                display: inline-block;
+                position: absolute;
+                right: 15px;
+                cursor: pointer;
+              }
+            }
+          }
+
+          .dateAgo {
+            height: 18px;
+            font-size: 12px;
+            color: #dbdbdb;
+          }
+
+          .addCommentBox {
+            display: flex;
+            align-items: center;
+            height: 53px;
+            border-top: solid 1px #dbdbdb;
+
+            input {
+              /* border: none; */
+              flex: 9;
+              padding: 10px;
+              border: none;
+              outline: none;
+            }
+
+            button {
+              flex: 1;
+              border: none;
+              background-color: #ffffff;
+              color: #bfe0fd;
+              font-size: 15px;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+    /* main-right 영역 */
+    .mainRight {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      right: 19%;
+      height: 500px;
+      width: 22%;
+
+      div {
+        margin-bottom: 10px;
+      }
+
+      .mainRight_account {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        div:first-child {
+          flex: 2;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+
+        div:last-child {
+          flex: 8;
+        }
+      }
+
+      .mainRight_story {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #dbdbdb;
+        background-color: #ffffff;
+        padding: 20px 20px 0px 20px;
+
+        .mainRight_story_title {
+          display: flex;
+
+          div:first-child {
+            flex: 1;
+          }
+
+          div:last-child {
+            flex: 4;
+            text-align: right;
+          }
+        }
+
+        .mainRight_story_content {
+          display: flex;
+
+          div:first-child {
+            flex: 1.1;
+
+            .profileImg {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+            }
+          }
+
+          div:last-child {
+            flex: 4;
+          }
+        }
+      }
+
+      .mainRight_recommend {
+        flex: 3;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        border: 1px solid #dbdbdb;
+        background-color: #ffffff;
+        margin-top: 15px;
+
+        div {
+          margin-left: 20px;
+        }
+
+        .custom_recommend_title {
+          display: flex;
+          margin-top: 25px;
+
+          div:first-child {
+            flex: 2.5;
+            margin-left: 0px;
+            font-weight: 600;
+            color: #a7a7a7;
+          }
+
+          div:last-child {
+            flex: 1;
+          }
+        }
+
+        .custom_recommend_content {
+          display: flex;
+          align-items: center;
+
+          div:nth-child(1) {
+            flex: 1;
+
+            .profileImg {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+            }
+          }
+
+          div:nth-child(2) {
+            flex: 3;
+          }
+
+          div:nth-child(3) {
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+}
