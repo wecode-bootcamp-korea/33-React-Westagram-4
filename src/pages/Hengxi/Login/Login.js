@@ -8,9 +8,7 @@ function Login() {
   let [idValue, setIdValue] = useState('');
   let [pswValue, setPsValue] = useState('');
 
-  let regEmail =
-    /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
-  const isValid = idValue.match(regEmail) && pswValue.length >= 5;
+  const isValid = idValue.includes('@') && pswValue.length >= 5;
 
   return (
     <div className="loginPage">

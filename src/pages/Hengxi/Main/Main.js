@@ -7,37 +7,54 @@ import {
   FaRegComment,
   FaRegPaperPlane,
   FaRegBookmark,
-  FaBackspace,
 } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Aside from './Aside/Aside.js';
+import ChatInput from './ChatInput.js';
+import ChatList from './ChatList.js';
 
 function Main() {
-  let [chatValue, setChatValue] = useState(['Good']);
-  let [chatInputValue, setChatInputValue] = useState('');
-  let [color, setColor] = useState(['black']);
+  const [chats, setChats] = useState([
+    {
+      id: 0,
+      text: '리액트의 기초 알아보기',
+      like: true,
+    },
+    {
+      id: 1,
+      text: 'westargram 만들기',
+      like: true,
+    },
+    {
+      id: 2,
+      text: '기능 구현 해보자...',
+      like: false,
+    },
+  ]);
 
-  const isValid = chatInputValue === '';
+  const pushId = useRef(3);
 
-  function post() {
-    if (chatInputValue !== '') {
-      let copyChatValue = [...chatValue];
-      copyChatValue.push(chatInputValue);
-      setChatValue(copyChatValue);
-      setChatInputValue('');
+  const onInput = text => {
+    const chat = {
+      id: pushId.current,
+      text,
+      like: false,
+    };
+    setChats(chats.concat(chat));
+    pushId.current += 1;
+    console.log(chats);
+  };
 
-      let copyColor = [...color];
-      copyColor.push('black');
-      setColor(copyColor);
-    }
-  }
+  const onRemove = id => {
+    let chatRemove = chats.filter(chat => chat.id !== id);
+    setChats(chatRemove);
+  };
 
-  function postEnter(e) {
-    if (e.code === 'Enter' && chatInputValue !== '') {
-      post();
-      setChatInputValue('');
-    }
-  }
+  const onLike = id => {
+    setChats(
+      chats.map(chat => (chat.id === id ? { ...chat, like: !chat.like } : chat))
+    );
+  };
 
   return (
     <>
@@ -72,61 +89,8 @@ function Main() {
                 <FaRegBookmark className="articleIcons" />
               </div>
             </div>
-            <div className="articleContent">
-              <p className="likebasic">
-                <span className="liksNickname">hengxi</span>님 외 <span>4</span>
-                명이 좋아합니다.
-              </p>
-              {chatValue.map((a, i) => {
-                return (
-                  <div key={i} className="articlePush">
-                    <span className="articleNickname">hengxi </span>
-                    <span className="articleComment">{a}</span>
-                    <div className="likeIcon">
-                      <p className="articleTime">1분전</p>
-
-                      <FaRegHeart
-                        color={color[i]}
-                        onClick={() => {
-                          let colorCopy = [...color];
-                          colorCopy[i] = color[i] === 'black' ? 'red' : 'black';
-                          setColor(colorCopy);
-                        }}
-                        className="likeIcons likeIconsHeart"
-                      />
-
-                      <FaBackspace
-                        onClick={() => {
-                          let copyChatValue = [...chatValue];
-                          copyChatValue.splice(i, 1);
-                          let colorCopy = [...color];
-                          colorCopy.splice(i, 1);
-                          setColor(colorCopy);
-                          setChatValue(copyChatValue);
-                        }}
-                        className="likeIcons likeIconsDelete"
-                      />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="articleInputBox">
-              <input
-                value={chatInputValue}
-                onKeyPress={postEnter}
-                onChange={e => {
-                  setChatInputValue(e.target.value);
-                }}
-                className="articleInput"
-                type="text"
-                placeholder="댓글달기..."
-              />
-              <button onClick={post} disabled={isValid} className="articlePost">
-                게시
-              </button>
-            </div>
+            <ChatList chats={chats} onRemove={onRemove} onLike={onLike} />
+            <ChatInput onInput={onInput} />
           </article>
         </section>
         <Aside />

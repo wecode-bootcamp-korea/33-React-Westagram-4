@@ -1,0 +1,40 @@
+.articlePush {
+  margin: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  .articleNickname {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .chatPost {
+    font-size: 13px;
+  }
+  .likeIcon {
+    display: flex;
+  }
+
+  .likeIconsHeart {
+    margin-right: 10px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .likes {
+    color: red;
+  }
+
+  .likeIconsDelete {
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  .likeIconsDelete:hover {
+    color: #1995f6;
+    cursor: pointer;
+  }
+
+  .articleTime {
+    margin-top: 5px;
+    margin-right: 5px;
+    font-weight: 300;
+    font-size: 12px;
+  }
+}
