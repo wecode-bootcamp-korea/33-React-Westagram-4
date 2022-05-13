@@ -9,6 +9,11 @@ function Login() {
     navigate('/main-ju');
   };
 
+  let [id, setId] = useState('');
+  let [pw, setPw] = useState('');
+  let [disabled, setDisabled] = useState(true);
+  let [backgroundColor, setBackgroundColor] = useState('rgb(204, 231, 255)');
+
   function handleIdInput(e) {
     setId(e.target.value);
     console.log('id', id);
@@ -17,10 +22,15 @@ function Login() {
   function handlePwInput(e) {
     setPw(e.target.value);
     console.log('pw', pw);
+    if (id.includes('@') && pw.length >= 4) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+    id.includes('@') && pw.length >= 4
+      ? setBackgroundColor('rgb(63, 157, 251)')
+      : setBackgroundColor('rgb(204, 231, 255)');
   }
-
-  let [id, setId] = useState('');
-  let [pw, setPw] = useState('');
 
   return (
     <div>
@@ -40,7 +50,12 @@ function Login() {
               type="password"
               placeholder="비밀번호"
             />
-            <button className="login_btn" onClick={goToMain}>
+            <button
+              className="login_btn"
+              disabled={disabled}
+              onClick={goToMain}
+              style={{ backgroundColor: backgroundColor }}
+            >
               로그인
             </button>
           </div>
