@@ -7,12 +7,11 @@ import '../../../styles/variables.scss';
 
 function Login() {
   const navigate = useNavigate();
-
   const goToMain = () => {
     navigate('/main-jy');
   };
-  const [inputId, setInputId] = useState();
-  const [inputPw, setInputPw] = useState();
+  const [inputId, setInputId] = useState('');
+  const [inputPw, setInputPw] = useState('');
 
   const handleIdInput = e => {
     setInputId(e.target.value);
@@ -48,7 +47,13 @@ function Login() {
               minLength="6"
               value={inputPw}
             />
-            <button onClick={goToMain} className="login_btn" type="submit">
+            <button
+              onClick={goToMain}
+              className={
+                inputId.includes('@') && inputPw.length >= 5 ? 'active' : ''
+              }
+              type="submit"
+            >
               로그인
             </button>
           </form>
