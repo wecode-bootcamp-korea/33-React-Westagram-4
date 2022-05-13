@@ -1,5 +1,12 @@
 @import '../../../styles/variables.scss';
 
+@mixin loginBtn {
+  width: 268px;
+  height: 30px;
+  border: none;
+  color: #ffffff;
+}
+
 .loginWrapper {
   display: flex;
   justify-content: center;
@@ -42,12 +49,14 @@
   }
 
   .login {
-    button {
-      width: 268px;
-      height: 30px;
-      border: none;
+    .inactive {
+      @include loginBtn;
       background-color: #c0dffd;
-      color: #ffffff;
+    }
+
+    .active {
+      @include loginBtn;
+      background-color: #0095f6;
     }
   }
 

@@ -11,6 +11,8 @@ function Login() {
   let [idValue, setIdValue] = useState('');
   let [pwValue, setPwValue] = useState('');
 
+  const isValid = idValue.includes('@') && pwValue.length >= 5;
+
   return (
     <div className="test">
       <section>
@@ -38,7 +40,16 @@ function Login() {
               />
             </div>
             <div className="login">
-              <button type="button" className="loginBtn" onClick={goToMain}>
+              <button
+                type="button"
+                className={
+                  idValue.includes('@') && pwValue.length >= 5
+                    ? 'active'
+                    : 'inactive'
+                }
+                onClick={goToMain}
+                disabled={!isValid}
+              >
                 로그인
               </button>
             </div>
