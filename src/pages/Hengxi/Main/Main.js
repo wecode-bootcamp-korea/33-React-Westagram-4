@@ -42,7 +42,6 @@ function Main() {
     };
     setChats(chats.concat(chat));
     pushId.current += 1;
-    console.log(chats);
   };
 
   const onRemove = id => {
