@@ -13,6 +13,22 @@ const Login = () => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
 
+  const isValidEmail = id.includes('@') && id.includes('.');
+  const isValidPassword = pw.length >= 5;
+
+  const isValidLogin = isValidEmail && isValidPassword;
+  const loginAlert = () => {
+    if (!isValidEmail) {
+      alert('Invalid Email');
+      return false;
+    } else if (!isValidPassword) {
+      alert('Invalid Password');
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   function handleIdInput(e) {
     setId(e.target.value);
   }
@@ -41,7 +57,13 @@ const Login = () => {
             id="pw"
             onkeydown="activateBtn()"
           />
-          <button className="login-btn" type="submit" onClick={goToMain}>
+          <button
+            className={
+              isValidLogin ? 'login-btn-activated' : 'login-btn-deactivated'
+            }
+            type="submit"
+            onClick={goToMain}
+          >
             Log In
           </button>
         </form>
