@@ -1,0 +1,30 @@
+.navMenu {
+  width: 250px;
+  height: 220px;
+  background-color: white;
+  position: fixed;
+  top: 50px;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+
+  .navMenus {
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 30px;
+
+    .navMenuIcon {
+      font-size: 25px;
+      margin-right: 10px;
+    }
+
+    span {
+      margin-top: 5px;
+    }
+  }
+
+  .navMenuLogout {
+    cursor: pointer;
+  }
+}

@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function Login() {
   const navigate = useNavigate();
-
   const goToMain = () => {
     navigate('/main-hm');
   };
 
+  let [idValue, setIdValue] = useState('');
+  let [pwValue, setPwValue] = useState('');
+
   return (
-    <div class="test">
+    <div className="test">
       <section>
         <div className="loginWrapper">
           <div className="loginContainer">
@@ -22,8 +24,18 @@ function Login() {
                 type="text"
                 id="id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
+                onChange={e => {
+                  setIdValue(e.target.value);
+                }}
               />
-              <input type="passwword" id="password" placeholder="비밀번호" />
+              <input
+                type="passwword"
+                id="password"
+                placeholder="비밀번호"
+                onChange={e => {
+                  setPwValue(e.target.value);
+                }}
+              />
             </div>
             <div className="login">
               <button type="button" className="loginBtn" onClick={goToMain}>
