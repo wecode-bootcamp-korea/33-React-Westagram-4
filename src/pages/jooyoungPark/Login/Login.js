@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 import '../../../styles/common.scss';
@@ -11,6 +11,17 @@ function Login() {
   const goToMain = () => {
     navigate('/main-jy');
   };
+  const [inputId, setInputId] = useState();
+  const [inputPw, setInputPw] = useState();
+
+  const handleIdInput = e => {
+    setInputId(e.target.value);
+  };
+
+  const handlePwInput = e => {
+    setInputPw(e.target.value);
+  };
+
   return (
     <main className="login">
       <section className="login_form">
@@ -21,15 +32,21 @@ function Login() {
 
           <form action="">
             <input
+              name="id"
+              onChange={handleIdInput}
               className="user_id"
               type="email"
               placeholder="전화번호, 사용자 이름 또는 이메일"
+              value={inputId}
             />
             <input
+              name="passwd"
+              onChange={handlePwInput}
               className="user_pw"
               type="password"
               placeholder="비밀번호"
-              minlength="6"
+              minLength="6"
+              value={inputPw}
             />
             <button onClick={goToMain} className="login_btn" type="submit">
               로그인

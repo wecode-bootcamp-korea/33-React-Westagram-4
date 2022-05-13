@@ -2,16 +2,10 @@
 
 $border-style: 1px solid #ededed;
 
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .login {
   .login_form {
     height: 100vh;
-    @include flex-center;
+    @include flexCenter;
 
     .login_container {
       width: 350px;
@@ -32,7 +26,6 @@ $border-style: 1px solid #ededed;
       header {
         h1 {
           @include titleFont;
-          // font-family: 'Lobster', cursive;
           font-size: 40px;
           margin-bottom: 50px;
         }
@@ -56,13 +49,13 @@ $border-style: 1px solid #ededed;
           font-size: 14px;
           font-weight: bold;
           color: white;
-          background-color: rgba(0, 147, 245, 0.5);
+          background-color: $lightBlue;
           border: none;
           border-radius: 5px;
         }
 
         button.active {
-          background-color: rgba(0, 147, 245);
+          background-color: $blue;
         }
       }
 
