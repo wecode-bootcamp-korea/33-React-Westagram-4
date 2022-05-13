@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.scss'; //link css
 import { useNavigate } from 'react-router-dom';
@@ -10,18 +10,31 @@ const Login = () => {
     navigate('/main-sy');
   };
 
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+
+  function handleIdInput(e) {
+    setId(e.target.value);
+  }
+
+  function handlePwInput(e) {
+    setPw(e.target.value);
+  }
+
   return (
     <>
       <div className="login-container">
         <h1>Westagram</h1>
         <form>
           <input
+            onChange={handleIdInput}
             type="text"
             placeholder="Phone number, username or email address"
             className="login-input"
             id="id"
           />
           <input
+            onChange={handlePwInput}
             type="password"
             placeholder="Password"
             className="login-input"
