@@ -34,7 +34,6 @@ function Login() {
             placeholder="비밀번호"
           />
         </div>
-        {/* <Link to="/mainpage"><button className='loginBtn' disabled={!isValid}>로그인</button></Link> */}
         <button
           onClick={() => {
             navigate('/main-hs');
