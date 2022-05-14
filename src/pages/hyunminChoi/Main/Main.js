@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   FaComment,
   FaEllipsisV,
@@ -7,9 +7,21 @@ import {
   FaStickyNote,
 } from 'react-icons/fa';
 import Nav from '../../../../src/components/Nav/Nav.js';
+import CommentList from './CommentList.js';
 import './Main.scss';
 
 function Main() {
+  let [userName] = useState('hacker');
+  let [comment, setComment] = useState('');
+  let [feedComments, setFeedComments] = useState([]);
+  let [isValid, setIsValid] = useState(false);
+
+  let post = e => {
+    const copyFeedComments = [...feedComments];
+    copyFeedComments.push(comment);
+    setFeedComments(copyFeedComments);
+    setComment('');
+  };
   return (
     <div>
       <Nav />
@@ -60,13 +72,15 @@ function Main() {
                       <p>좋아요 1,092,182개</p>
                     </section>
                     <div className="commentBox">
-                      <div className="userCommentBox">
-                        <p className="userName">hacker</p>
-                        <div className="userComment">사진이 참 잘나왔네요!</div>
-                        <p className="userHeart">
-                          <FaHeart />
-                        </p>
-                      </div>
+                      {feedComments.map((comment, i) => {
+                        return (
+                          <CommentList
+                            userName={userName}
+                            userComment={comment}
+                            key={i}
+                          />
+                        );
+                      })}
                     </div>
                     <section className="dateAgo">3일전</section>
                     <section className="addCommentBox">
@@ -74,8 +88,26 @@ function Main() {
                         type="text"
                         className="inputComment"
                         placeholder="댓글 달기..."
+                        onChange={e => {
+                          setComment(e.target.value);
+                        }}
+                        onKeyUp={e => {
+                          e.target.value.length > 0
+                            ? setIsValid(true)
+                            : setIsValid(false);
+                        }}
+                        value={comment}
                       />
-                      <button type="button" className="submitCommentBtn">
+                      <button
+                        type="button"
+                        className={
+                          comment.length > 0
+                            ? 'submitCommentActive'
+                            : 'submitCommentInactive'
+                        }
+                        onClick={post}
+                        disabled={isValid ? false : true}
+                      >
                         게시
                       </button>
                     </section>

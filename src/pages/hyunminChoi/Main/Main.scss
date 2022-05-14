@@ -1,5 +1,12 @@
 @import '../../../styles/variables.scss';
 
+@mixin submitComment {
+  flex: 1;
+  border: none;
+  background-color: #ffffff;
+  text-align: left;
+  font-size: 15px;
+}
 /* ********** MAIN ********** */
 .wrapper {
   display: flex;
@@ -120,7 +127,6 @@
                 position: absolute;
                 right: 40px;
                 cursor: pointer;
-                color: black;
               }
 
               .delete {
@@ -152,13 +158,15 @@
               outline: none;
             }
 
-            button {
-              flex: 1;
-              border: none;
-              background-color: #ffffff;
+            .submitCommentInactive {
+              @include submitComment();
               color: #bfe0fd;
-              font-size: 15px;
-              text-align: left;
+            }
+
+            .submitCommentActive {
+              @include submitComment();
+              color: #0095f6;
+              cursor: pointer;
             }
           }
         }
