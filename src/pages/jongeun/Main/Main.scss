@@ -180,12 +180,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 7px;
     max-width: 580px;
   }
 }
 
 .comment_heart {
-  font-size: 18px;
+  font-size: 19px;
+  margin-right: 5px;
 
   &:hover {
     color: gray;

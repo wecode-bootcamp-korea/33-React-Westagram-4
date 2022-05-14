@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import SuggestUser from './Aside/JongeunComponent/SuggestUser';
 
 function Main() {
+  let [comment, setComment] = useState(['댓글 들어가는 곳']);
+  let [input, setInput] = useState('');
+  let [likeBtn, setLikeBtn] = useState(['black']);
+
   return (
     <div>
       {/* navbar */}
@@ -74,23 +78,77 @@ function Main() {
                   14개 모두 보기
                 </div>
                 <div className="comment_up">
-                  <div className="comment_board">
+                  {/* <div className="comment_board">
                     <div className="comment">댓글달리는 곳입니다</div>
                     <div className="comment_icon">
                       <i className="fa-regular fa-heart ft_log comment_heart"></i>
                       <i className="fa-solid fa-trash-can"></i>
                     </div>
-                  </div>
+                  </div> */}
+                  {comment.map((a, i) => {
+                    return (
+                      <div className="comment_board" key={a}>
+                        <div className="comment">{comment[i]}</div>
+                        <div className="comment_icon">
+                          <i
+                            style={{ color: likeBtn[i] }}
+                            onClick={() => {
+                              let copy = [...likeBtn];
+                              if (copy[i] === 'black') {
+                                copy[i] = 'red';
+                                setLikeBtn(copy);
+                              } else if (copy[i] === 'red') {
+                                copy[i] = 'black';
+                                setLikeBtn(copy);
+                              }
+                            }}
+                            className="fa-solid fa-heart comment_heart"
+                          ></i>
+                          <i
+                            onClick={i => {
+                              let copy = [...comment];
+                              copy.splice(i, 1);
+                              setComment(copy);
+                            }}
+                            className="fa-solid fa-trash-can"
+                          ></i>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
                 <div className="footer_time">5월 2일</div>
               </div>
               <div className="feed_comment">
                 <input
+                  onChange={e => {
+                    setInput(e.target.value);
+                  }}
+                  onKeyUp={e => {
+                    if (e.keyCode === 13 && input !== '') {
+                      let copy = [...comment];
+                      copy.unshift(input);
+                      setComment(copy);
+                      e.target.value = '';
+                    }
+                  }}
                   className="comment_area"
                   type="text"
                   placeholder="댓글 달기.."
                 />
-                <button className="input_btn">게시</button>
+                <button
+                  className="input_btn"
+                  onClick={() => {
+                    if (input !== '') {
+                      let copy = [...comment];
+                      copy.unshift(input);
+                      setComment(copy);
+                      setInput('');
+                    }
+                  }}
+                >
+                  게시
+                </button>
               </div>
             </article>
           </section>
