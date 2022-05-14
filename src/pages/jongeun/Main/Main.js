@@ -2,41 +2,35 @@ import React, { useState } from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import SuggestUser from './Aside/JongeunComponent/SuggestUser';
+import Comment from './Aside/JongeunComponent/Comment';
 
 function Main() {
   let [comment, setComment] = useState(['댓글 들어가는 곳']);
   let [input, setInput] = useState('');
-  let [likeBtn, setLikeBtn] = useState(['black']);
+  // let [likeBtn, setLikeBtn] = useState(['black']);
+
+  function postEnter(e) {
+    if (e.code === 'Enter' && setInput.length > 0) {
+      let enterCopy = [...comment];
+      enterCopy.unshift(input);
+      setComment(enterCopy);
+      setInput('');
+    }
+  }
+
+  function postClick() {
+    if (setInput.length > 0) {
+      let clickCopy = [...comment];
+      clickCopy.unshift(input);
+      setComment(clickCopy);
+      setInput('');
+    }
+  }
 
   return (
     <div>
       {/* navbar */}
       <Nav />
-      {/* <nav className="navbar">
-        <div className="nav_container">
-          <div className="nav_left_logo">
-            <i className="fa-brands fa-instagram"></i>
-            <div className="left_logo_divide">|</div>
-            <div className="left_logo_title">Westagram</div>
-          </div>
-          <input className="search" type="text" placeholder="검색" />
-          <div className="nav_right_logo">
-            <img
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-              alt="탐색"
-            />
-            <img
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-              alt="하트"
-            />
-            <img
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-              alt="마이페이지"
-            />
-          </div>
-        </div>
-      </nav> */}
-      {/* main */}
       <main className="main_section">
         <div className="main_container">
           <section className="feeds">
@@ -85,7 +79,8 @@ function Main() {
                       <i className="fa-solid fa-trash-can"></i>
                     </div>
                   </div> */}
-                  {comment.map((a, i) => {
+
+                  {/* {comment.map((a, i) => {
                     return (
                       <div className="comment_board" key={a}>
                         <div className="comment">{comment[i]}</div>
@@ -115,38 +110,25 @@ function Main() {
                         </div>
                       </div>
                     );
+                  })} */}
+                  {comment.map((a, i) => {
+                    return <Comment key={a} comment={comment[i]} />;
                   })}
                 </div>
                 <div className="footer_time">5월 2일</div>
               </div>
               <div className="feed_comment">
                 <input
+                  value={input}
                   onChange={e => {
                     setInput(e.target.value);
                   }}
-                  onKeyUp={e => {
-                    if (e.keyCode === 13 && input !== '') {
-                      let copy = [...comment];
-                      copy.unshift(input);
-                      setComment(copy);
-                      e.target.value = '';
-                    }
-                  }}
+                  onKeyUp={postEnter}
                   className="comment_area"
                   type="text"
                   placeholder="댓글 달기.."
                 />
-                <button
-                  className="input_btn"
-                  onClick={() => {
-                    if (input !== '') {
-                      let copy = [...comment];
-                      copy.unshift(input);
-                      setComment(copy);
-                      setInput('');
-                    }
-                  }}
-                >
+                <button className="input_btn" onClick={postClick}>
                   게시
                 </button>
               </div>
