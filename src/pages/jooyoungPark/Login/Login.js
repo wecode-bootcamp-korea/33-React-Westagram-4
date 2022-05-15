@@ -53,6 +53,9 @@ function Login() {
                 inputId.includes('@') && inputPw.length >= 5 ? 'active' : ''
               }
               type="submit"
+              disabled={
+                inputId.includes('@') && inputPw.length >= 5 ? false : true
+              }
             >
               로그인
             </button>
