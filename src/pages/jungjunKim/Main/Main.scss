@@ -1,0 +1,458 @@
+.mainPage {
+  background-color: #fafafa;
+  text-align: center;
+  position: relative;
+}
+
+/* nav */
+
+nav {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  border-bottom: 1px solid #b9b9b9;
+  z-index: 10;
+}
+
+.navBack {
+  justify-content: center;
+  margin: auto;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.navImgTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navImg {
+  width: 30px;
+  height: 30px;
+  margin: 0px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navTitle {
+  font-size: 30px;
+  font-family: 'Lobster', cursive;
+  cursor: default;
+  cursor: pointer;
+}
+
+.navInputFlex {
+  width: 650px;
+}
+
+.navInputBox {
+  width: 250px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  margin: auto;
+  background-color: #f0eeee;
+  border-radius: 10px;
+}
+
+.navInput {
+  width: 200px;
+  border: none;
+  text-align: center;
+  overflow: auto;
+  font-size: 15px;
+  background-color: #f0eeee;
+  outline: none;
+  line-height: 40px;
+}
+
+.biSearch {
+  font-size: 15px;
+  color: #817e7e;
+  cursor: pointer;
+}
+
+.navIconFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.navIcon {
+  font-size: 25px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* main */
+
+main {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 60px;
+}
+
+/* section, article */
+
+section {
+  width: 670px;
+  margin: 50px 0;
+}
+
+article {
+  border: 1px solid rgba(180, 180, 180, 0.933);
+  background-color: white;
+  border-radius: 3px;
+}
+
+.articleHeader {
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.articleImg {
+  flex: 1;
+}
+
+.articleProfileImg {
+  border: 2px solid #c536a4;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.articleProfileTitle {
+  flex: 8;
+  text-align: left;
+  margin-left: 15px;
+}
+
+.articleNickname {
+  font-weight: bold;
+  cursor: pointer;
+}
+.articlePlace {
+  font-weight: 100;
+  font-size: 13px;
+  margin: 0;
+  cursor: default;
+}
+
+.articleHeaderIcon {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.articleImg {
+  width: 100%;
+  height: 600px;
+}
+
+.articleIconBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.articleIcons {
+  font-size: 25px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.articleContent {
+  text-align: left;
+  margin-left: 12px;
+}
+
+.liksNickname {
+  font-weight: bold;
+}
+
+.likeIcon {
+  display: flex;
+}
+
+.likeIcons {
+  margin: 5px 5px 0 10px;
+  font-size: 12px;
+}
+
+.likeIconsHeart:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.likeIconsDelete:hover {
+  color: #1995f6;
+  cursor: pointer;
+}
+
+.articleTime {
+  margin-top: 5px;
+  margin-right: 5px;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.articleInputBox {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(180, 180, 180, 0.933);
+}
+
+.articleInput {
+  width: 90%;
+  line-height: 40px;
+  border: none;
+  outline: none;
+}
+.articlePost {
+  border: none;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  color: #b2dffc;
+  background-color: white;
+  font-size: 14px;
+}
+
+/* aside */
+
+aside {
+  margin-top: 20px;
+  width: 300px;
+  margin-left: 30px;
+}
+
+.asideFixed {
+  position: fixed;
+}
+
+.asideProfile {
+  display: flex;
+  text-align: left;
+  align-items: center;
+}
+
+.aisdeProfileBox {
+  border: 1px solid #cfcccc;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.aisdeProfileImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.asideProfileIdBox {
+  margin-top: 15px;
+}
+
+.aisdeProfileId {
+  margin-bottom: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.aisdeProfileName {
+  margin-top: 0;
+  color: gray;
+  font-size: 14px;
+}
+
+.asideStory {
+  width: 300px;
+  border: 1px solid rgba(180, 180, 180, 0.933);
+  margin: 20px 0;
+  border-radius: 3px;
+}
+
+.storyTitleBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.storyTitle {
+  color: gray;
+}
+
+.storyTitleContent {
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.storyProfile {
+  text-align: left;
+}
+
+.storyProfiles {
+  display: flex;
+  margin: 10px 0 10px 10px;
+}
+
+.storyProfilesImgBox {
+  border-radius: 50%;
+  border: 2px solid #c536a4;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.storyProfilesImg {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.storyProfileId {
+  margin-bottom: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.storyProfileTime {
+  margin-top: 0;
+  font-size: 13px;
+  color: gray;
+}
+
+.recomendBox {
+  margin-left: 10px;
+}
+
+.follow {
+  font-size: 12px;
+  cursor: pointer;
+  color: #1995f6;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  aside {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .navInputBox {
+    display: none;
+  }
+  .articleImg {
+    height: 500px;
+  }
+}
+
+/* Id search */
+
+.searchId {
+  background-color: white;
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  top: 55px;
+  border: 1px solid #eee;
+  text-align: left;
+  overflow: auto;
+  display: none;
+  border-radius: 5px;
+}
+
+.searchId::-webkit-scrollbar {
+  width: 5px;
+}
+.searchId::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+  height: 17%;
+  border-radius: 20px;
+}
+.searchId::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.searchIdInfo {
+  margin-left: 20px;
+}
+
+.searchBox {
+  margin: 20px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.searchImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.searchText {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.searchIdToggle {
+  display: block;
+}
+
+/* nav 메뉴 박스 */
+
+.navMenu {
+  width: 250px;
+  height: 200px;
+  background-color: white;
+  position: fixed;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 20px;
+  display: none;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.navMenus {
+  cursor: pointer;
+}
+
+.navMenuIcon {
+  font-size: 25px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.navMenuToggle {
+  display: block;
+}
+
+.navMenuLogout {
+  cursor: pointer;
+}
