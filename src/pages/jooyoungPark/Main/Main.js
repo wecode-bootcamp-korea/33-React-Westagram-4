@@ -35,6 +35,10 @@ function Main() {
     e.preventDefault();
   };
 
+  const onRemove = id => {
+    setComment(comment.filter(com => com.id !== id));
+  };
+
   return (
     <div className="main">
       <Nav />
@@ -92,7 +96,7 @@ function Main() {
                 <div className="user_post_content">
                   <strong className="user_id">cuteCat</strong>
                   <span>고양이 귀여워</span>
-                  <Commentbox comment={comment} />
+                  <Commentbox comment={comment} onRemove={onRemove} />
                   <button className="more_comment">댓글 147개 모두 보기</button>
                 </div>
               </div>
