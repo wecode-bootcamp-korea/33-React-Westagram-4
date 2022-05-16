@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+}
+
+/* loginPage */
+
+.loginPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* display: none; */
+}
+
+.loginTitle {
+  font-family: 'Lobster', cursive;
+  font-weight: lighter;
+  font-size: 80px;
+}
+
+.loginInputBox {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+.loginInputBox input {
+  line-height: 40px;
+  margin-bottom: 10px;
+  border: 1px solid lightgray;
+  outline: none;
+  border-radius: 3px;
+}
+
+.loginInputBox input:focus {
+  border: 1px solid gray;
+}
+.loginBtnValid {
+  width: 80%;
+  margin: auto;
+  height: 40px;
+  margin-bottom: 80px;
+  margin-top: 10px;
+  border: none;
+  background-color: #1995f6;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.loginBtn {
+  width: 80%;
+  margin: auto;
+  height: 40px;
+  margin-bottom: 80px;
+  margin-top: 10px;
+  border: none;
+  background-color: #b2dffc;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #385185;
+}
+
+.emailCheck {
+  margin-top: 0;
+  font-size: 13px;
+  color: #b9b9b9;
+}
+
+/* login button on/off */
+
+/*
+.btnOn {
+  background: #1995f6;
+  cursor: pointer;
+}
+*/
+.btnOn:active {
+  background: #b2dffc;
+}
