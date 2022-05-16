@@ -267,17 +267,32 @@ form {
   span {
     font-weight: 500;
   }
+}
 
-  .cmt-btn {
-    border: none;
+.comment-user {
+  background: $white;
+  margin-right: 5px;
+  font-weight: bolder;
+}
+
+.comments {
+  background: $white;
+  margin: 5px 0 5px -15px;
+
+  &:first-child {
+    margin-top: 10px;
+  }
+}
+
+.cmt-btn {
+  border: none;
+  background: $white;
+  padding: 0;
+  margin-right: 3px;
+
+  img {
+    width: 13px;
     background: $white;
-    padding: 0;
-    margin-right: 3px;
-
-    img {
-      width: 13px;
-      background: $white;
-    }
   }
 }
 
@@ -310,7 +325,14 @@ form {
   .smile-icon {
     height: 30px;
     margin: 0 10px;
+    margin-left: 10px;
     background-color: $white;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    flex: 1;
   }
 }
 
@@ -321,6 +343,7 @@ form {
   outline: none;
   font-size: 14px;
   background-color: $white;
+  margin-left: 20px;
 }
 
 .comment-btn {

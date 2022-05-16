@@ -17,17 +17,17 @@ const Login = () => {
   const isValidPassword = pw.length >= 5;
 
   const isValidLogin = isValidEmail && isValidPassword;
-  const loginAlert = () => {
-    if (!isValidEmail) {
-      alert('Invalid Email');
-      return false;
-    } else if (!isValidPassword) {
-      alert('Invalid Password');
-      return false;
-    } else {
-      return true;
-    }
-  };
+  // const loginAlert = () => {
+  //   if (!isValidEmail) {
+  //     alert('Invalid Email');
+  //     return false;
+  //   } else if (!isValidPassword) {
+  //     alert('Invalid Password');
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // };
 
   function handleIdInput(e) {
     setId(e.target.value);
