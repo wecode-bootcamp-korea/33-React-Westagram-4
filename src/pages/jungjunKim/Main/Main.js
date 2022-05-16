@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
 
 // 아이콘들 import 해오기
@@ -7,6 +7,11 @@ import { BiSearch } from 'react-icons/bi';
 import { BsFillHouseDoorFill } from 'react-icons/bs';
 
 function JungjunKimMain() {
+  // 댓글창에 입력한 값 저장할 state
+  let [inputArticleValue, setInputArticleValue] = useState('');
+  // 댓글
+  let [댓글모음배열, 댓글모음배열바꾸기] = useState(['Good']);
+
   return (
     <div className="mainPage">
       {/* <!-- 네브바 --> */}
@@ -33,20 +38,20 @@ function JungjunKimMain() {
           <div className="navIconFlex">
             {/** <i className="fa-solid fa-house navIcon"></i> */}
             <BsFillHouseDoorFill className="navIcon" />
-            <i className="fa-regular fa-compass navIcon"></i>
-            <i className="fa-regular fa-heart navIcon"></i>
-            <i className="fa-regular fa-user navIcon"></i>
+            <i className="fa-regular fa-compass navIcon" />
+            <i className="fa-regular fa-heart navIcon" />
+            <i className="fa-regular fa-user navIcon" />
             <div className="navMenu">
               <div className="navMenus">
-                <i className="fa-regular fa-user navMenuIcon"></i>
+                <i className="fa-regular fa-user navMenuIcon" />
                 <span>프로필</span>
               </div>
               <div className="navMenus">
-                <i className="fa-regular fa-bookmark navMenuIcon"></i>
+                <i className="fa-regular fa-bookmark navMenuIcon" />
                 <span>저장됨</span>
               </div>
               <div className="navMenus">
-                <i className="fa-solid fa-gear navMenuIcon"></i>
+                <i className="fa-solid fa-gear navMenuIcon" />
                 <span>설정</span>
               </div>
               <span className="navMenuLogout">로그아웃</span>
@@ -69,7 +74,7 @@ function JungjunKimMain() {
                 <span className="articleNickname">wecode_bootcamp</span>
                 <p className="articlePlace">woCode - 위코드</p>
               </div>
-              <i className="fa-solid fa-ellipsis articleHeaderIcon"></i>
+              <i className="fa-solid fa-ellipsis articleHeaderIcon" />
             </div>
             <img
               alt="article image"
@@ -78,12 +83,12 @@ function JungjunKimMain() {
             />
             <div className="articleIconBox">
               <div className="articleIconBoxLeft">
-                <i className="fa-regular fa-heart articleIcons"></i>
-                <i className="fa-regular fa-comment articleIcons"></i>
-                <i className="fa-solid fa-arrow-up-from-bracket articleIcons"></i>
+                <i className="fa-regular fa-heart articleIcons" />
+                <i className="fa-regular fa-comment articleIcons" />
+                <i className="fa-solid fa-arrow-up-from-bracket articleIcons" />
               </div>
               <div className="articleIconBoxRight">
-                <i className="fa-regular fa-bookmark articleIcons"></i>
+                <i className="fa-regular fa-bookmark articleIcons" />
               </div>
             </div>
             <div className="articleContent">
@@ -92,23 +97,44 @@ function JungjunKimMain() {
                 <span>4</span>
                 명이 좋아합니다.
               </p>
-              <div className="articleCommentBox">
-                <span className="articleNickname">jungjun</span>
-                <span className="articleComment">Good</span>
-                <div className="likeIcon">
-                  <p className="articleTime">1분전</p>
-                  {/* <!-- <i className="fa-regular fa-heart likeIconsHeart likeIcons"></i>
+              {/** mission 3) 댓글 기능 구현 */}
+              {댓글모음배열.map(function (a, i) {
+                return (
+                  <div className="articleCommentBox" key={i}>
+                    <span className="articleNickname">unknownUser{i + 1}</span>
+                    <span className="articleComment">{a}</span>
+                    <div className="likeIcon">
+                      <p className="articleTime">{i}분전</p>
+                      {/* <!-- <i className="fa-regular fa-heart likeIconsHeart likeIcons"></i>
                             <i className="fa-solid fa-delete-left likeIconsDelete likeIcons"></i> --> */}
-                </div>
-              </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
             <div className="articleInputBox">
               <input
                 className="articleInput"
+                value={inputArticleValue}
                 type="text"
                 placeholder="댓글달기..."
+                // mission 3) 댓글 내용 state에 저장
+                onChange={e => {
+                  setInputArticleValue(e.target.value);
+                }}
               />
-              <button className="articlePost">게시</button>
+              <button
+                className="articlePost"
+                onClick={() => {
+                  let copy = [...댓글모음배열];
+                  copy.push(inputArticleValue);
+                  댓글모음배열바꾸기(copy);
+                  setInputArticleValue('');
+                  // console.log(inputArticleValue); 실행시점 문제... console.log가 먼저 실행
+                }}
+              >
+                게시
+              </button>
             </div>
           </article>
         </section>
