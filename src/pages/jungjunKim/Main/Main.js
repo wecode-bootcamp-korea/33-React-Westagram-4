@@ -6,12 +6,20 @@ import { FiInstagram } from 'react-icons/fi';
 import { BiSearch } from 'react-icons/bi';
 import { BsFillHouseDoorFill } from 'react-icons/bs';
 
+import Comment from './comment';
+
 function JungjunKimMain() {
   // 댓글창에 입력한 값 저장할 state
   let [inputArticleValue, setInputArticleValue] = useState('');
   // 댓글
   let [댓글모음배열, 댓글모음배열바꾸기] = useState(['Good']);
 
+  // 엔터키로 댓글 달기 기능
+  // const onKeyPress = e => {
+  //   if (e.key === 'Enter') {
+  //     onClick();
+  //   }
+  // };
   return (
     <div className="mainPage">
       {/* <!-- 네브바 --> */}
@@ -98,21 +106,33 @@ function JungjunKimMain() {
                 명이 좋아합니다.
               </p>
               {/** mission 3) 댓글 기능 구현 */}
-              {댓글모음배열.map(function (a, i) {
+              {/** replies */}
+              {댓글모음배열.map(function (comment, i) {
                 return (
-                  <div className="articleCommentBox" key={i}>
-                    <span className="articleNickname">unknownUser{i + 1}</span>
-                    <span className="articleComment">{a}</span>
-                    <div className="likeIcon">
-                      <p className="articleTime">{i}분전</p>
-                      {/* <!-- <i className="fa-regular fa-heart likeIconsHeart likeIcons"></i>
-                            <i className="fa-solid fa-delete-left likeIconsDelete likeIcons"></i> --> */}
-                    </div>
-                  </div>
+                  // <div className="articleCommentBox" key={i}>
+                  //   <span className="articleNickname">unknownUser{i + 1}</span>
+                  //   <span className="articleComment">{comment}</span>
+                  //   <div className="likeIcon">
+                  //     <p className="articleTime">{i}분전</p>
+                  //     {/* <!-- <i className="fa-regular fa-heart likeIconsHeart likeIcons"></i>
+                  //           <i className="fa-solid fa-delete-left likeIconsDelete likeIcons"></i> -->  */}
+                  //   </div>
+                  // </div>
+                  <Comment 댓글모음배열1={댓글모음배열[i]} i={i} /> // {i} state 선언 안 해도 쓸 수 있네
                 );
               })}
             </div>
-            <div className="articleInputBox">
+            <form // form 태그로 엔터기능 구현
+              onSubmit={e => {
+                // onSubmit
+                e.preventDefault(); // 새로고침 방지
+                let copy = [...댓글모음배열];
+                copy.push(inputArticleValue); // setInputArticleValue()로 inputArticleValue를 변화시키면 이 copy에 추가되는 inputArticleValue는 어떻게 되는거임?
+                댓글모음배열바꾸기(copy);
+                setInputArticleValue('');
+              }}
+              className="articleInputBox"
+            >
               <input
                 className="articleInput"
                 value={inputArticleValue}
@@ -122,20 +142,26 @@ function JungjunKimMain() {
                 onChange={e => {
                   setInputArticleValue(e.target.value);
                 }}
+                // // 엔터 기능 구현 시도
+                // onKeyPress={e => {
+                //   e.key === 'Enter' ? onClick() : null;
+                // }}
               />
               <button
+                type="submit" // 엔터키와 같이 동작하게끔 type = submit
                 className="articlePost"
-                onClick={() => {
-                  let copy = [...댓글모음배열];
-                  copy.push(inputArticleValue);
-                  댓글모음배열바꾸기(copy);
-                  setInputArticleValue('');
-                  // console.log(inputArticleValue); 실행시점 문제... console.log가 먼저 실행
-                }}
+                // 엔터키 없이 '게시'버튼 클릭으로 올릴 때
+                // onClick={() => {
+                //   let copy = [...댓글모음배열];
+                //   copy.push(inputArticleValue); // setInputArticleValue()로 inputArticleValue를 변화시키면 이 copy에 추가되는 inputArticleValue는 어떻게 되는거임?
+                //   댓글모음배열바꾸기(copy);
+                //   setInputArticleValue('');
+                // console.log(inputArticleValue); 실행시점 문제... console.log가 먼저 실행
+                // }}
               >
                 게시
               </button>
-            </div>
+            </form>
           </article>
         </section>
         <aside>
