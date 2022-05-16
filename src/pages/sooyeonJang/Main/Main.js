@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
 import './Main.scss';
+import Comment from './Comment';
 
 const Main = () => {
   const [newReply, setReply] = useState('');
@@ -174,12 +175,7 @@ const Main = () => {
                 <div className="comment-place">
                   <ul className="comment-box">
                     {replies.map((comment, i) => {
-                      return (
-                        <li className="comments">
-                          <span className="comment-user">user{i + 1}</span>
-                          {comment}
-                        </li>
-                      );
+                      return <Comment replies={replies[i]} i={i} />;
                     })}
                   </ul>
                 </div>
