@@ -72,12 +72,15 @@ function Main() {
                       <p>좋아요 1,092,182개</p>
                     </section>
                     <div className="commentBox">
-                      {feedComments.map((comment, i) => {
+                      {feedComments.map((commentArr, i) => {
                         return (
                           <CommentList
-                            userName={userName}
-                            userComment={comment}
                             key={i}
+                            id={i}
+                            userName={userName}
+                            userComment={commentArr}
+                            feedComments={feedComments}
+                            setFeedComments={setFeedComments}
                           />
                         );
                       })}
@@ -95,6 +98,11 @@ function Main() {
                           e.target.value.length > 0
                             ? setIsValid(true)
                             : setIsValid(false);
+                        }}
+                        onKeyDown={e => {
+                          if (e.key == 'Enter' && isValid) {
+                            post();
+                          }
                         }}
                         value={comment}
                       />

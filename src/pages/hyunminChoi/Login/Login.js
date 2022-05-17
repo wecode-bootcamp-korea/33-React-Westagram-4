@@ -29,6 +29,11 @@ function Login() {
                 onChange={e => {
                   setIdValue(e.target.value);
                 }}
+                onKeyDown={e => {
+                  if (e.key === 'Enter' && isValid) {
+                    navigate('/main-hm');
+                  }
+                }}
               />
               <input
                 type="passwword"

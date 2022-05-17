@@ -7,6 +7,13 @@
   text-align: left;
   font-size: 15px;
 }
+
+@mixin commentHeart {
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  cursor: pointer;
+}
 /* ********** MAIN ********** */
 .wrapper {
   display: flex;
@@ -26,8 +33,8 @@
       .content {
         display: flex;
         flex-direction: column;
-        background-color: #ffffff;
         border: 1px solid #dbdbdb;
+        background-color: #ffffff;
 
         .top {
           display: flex;
@@ -54,8 +61,8 @@
           }
 
           .topService {
-            margin-right: 15px;
             justify-content: flex-end;
+            margin-right: 15px;
           }
         }
 
@@ -71,10 +78,8 @@
           font-size: 14px;
 
           > * {
-            /* display: inline-block;
-                      vertical-align: middle; */
-            padding-left: 16px;
             margin-top: 5px;
+            padding-left: 16px;
           }
 
           .convenience {
@@ -96,8 +101,8 @@
 
             span:nth-child(4) {
               flex: 8;
-              text-align: right;
               margin-right: 15px;
+              text-align: right;
             }
           }
 
@@ -123,10 +128,12 @@
               }
 
               .userHeart {
-                display: inline-block;
-                position: absolute;
-                right: 40px;
-                cursor: pointer;
+                @include commentHeart();
+              }
+
+              .userHeartClicked {
+                @include commentHeart();
+                color: red;
               }
 
               .delete {
@@ -178,8 +185,8 @@
       display: flex;
       flex-direction: column;
       right: 19%;
-      height: 500px;
       width: 22%;
+      height: 500px;
 
       div {
         margin-bottom: 10px;
@@ -250,9 +257,9 @@
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
+        margin-top: 15px;
         border: 1px solid #dbdbdb;
         background-color: #ffffff;
-        margin-top: 15px;
 
         div {
           margin-left: 20px;
