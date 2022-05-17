@@ -5,26 +5,40 @@ import SuggestUser from './Aside/JongeunComponent/SuggestUser';
 import Comment from './Aside/JongeunComponent/Comment';
 
 function Main() {
-  let [comment, setComment] = useState(['댓글 들어가는 곳']);
+  let [comment, setComment] = useState([
+    { content: '댓글달리는 곳', id: randomId(), like: false },
+  ]);
   let [input, setInput] = useState('');
-  // let [likeBtn, setLikeBtn] = useState(['black']);
+
+  function randomId() {
+    let a = new Uint32Array(3);
+    window.crypto.getRandomValues(a);
+    return (
+      performance.now().toString(36) +
+      Array.from(a)
+        .map(A => A.toString(36))
+        .join('')
+    ).replace(/\./g, '');
+  }
 
   function postEnter(e) {
-    if (e.code === 'Enter' && setInput.length > 0) {
-      let enterCopy = [...comment];
-      enterCopy.unshift(input);
-      setComment(enterCopy);
-      setInput('');
+    if (e.code === 'Enter' && input.length > 0) {
+      postClick();
     }
   }
 
   function postClick() {
-    if (setInput.length > 0) {
+    if (input.length > 0) {
+      let task = {
+        id: randomId(),
+        content: input,
+        like: false,
+      };
       let clickCopy = [...comment];
-      clickCopy.unshift(input);
+      clickCopy.unshift(task);
       setComment(clickCopy);
-      setInput('');
     }
+    setInput('');
   }
 
   return (
@@ -112,7 +126,15 @@ function Main() {
                     );
                   })} */}
                   {comment.map((a, i) => {
-                    return <Comment key={a} comment={comment[i]} />;
+                    return (
+                      <Comment
+                        key={i}
+                        a={a}
+                        comment={comment}
+                        i={i}
+                        setComment={setComment}
+                      />
+                    );
                   })}
                 </div>
                 <div className="footer_time">5월 2일</div>
