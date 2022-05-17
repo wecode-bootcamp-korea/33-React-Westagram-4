@@ -7,10 +7,29 @@ import {
   FaStickyNote,
 } from 'react-icons/fa';
 import Nav from '../../../../src/components/Nav/Nav.js';
+import MainRightStory from '../components/MainRightStory.js';
 import CommentList from './CommentList.js';
 import './Main.scss';
 
 function Main() {
+  let user = [
+    {
+      id: 1,
+      userName: 'ironman',
+      img: '../../../../images/hyunminChoi/Main/man1.avif',
+    },
+    {
+      id: 2,
+      userName: 'aquaman',
+      img: '../../../../images/hyunminChoi/Main/man2.avif',
+    },
+    {
+      id: 3,
+      userName: 'batman',
+      img: '../../../../images/hyunminChoi/Main/man3.avif',
+    },
+  ];
+
   let [userName] = useState('hacker');
   let [comment, setComment] = useState('');
   let [feedComments, setFeedComments] = useState([]);
@@ -146,45 +165,16 @@ function Main() {
                     <span>모두보기</span>
                   </div>
                 </div>
-                <div className="mainRight_story_content">
-                  <div>
-                    <img
-                      src="../../../../images/hyunminChoi/Main/man1.avif"
-                      className="profileImg"
-                      alt="profileImg"
+                {user.map((userArr, i) => {
+                  return (
+                    <MainRightStory
+                      key={userArr.id}
+                      userName={userArr.userName}
+                      message="test"
+                      img={userArr.img}
                     />
-                  </div>
-                  <div>
-                    <p>superman</p>
-                    <p>test</p>
-                  </div>
-                </div>
-                <div className="mainRight_story_content">
-                  <div>
-                    <img
-                      src="../../../../images/hyunminChoi/Main/man2.avif"
-                      className="profileImg"
-                      alt="profileImg"
-                    />
-                  </div>
-                  <div>
-                    <p>Ironman</p>
-                    <p>test</p>
-                  </div>
-                </div>
-                <div className="mainRight_story_content">
-                  <div>
-                    <img
-                      src="../../../../images/hyunminChoi/Main/man1.avif"
-                      className="profileImg"
-                      alt="profileImg"
-                    />
-                  </div>
-                  <div>
-                    <p>batman</p>
-                    <p>test</p>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
               <div className="mainRight_recommend">
                 <div className="custom_recommend_title">
