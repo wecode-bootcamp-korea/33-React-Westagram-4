@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Nav from '../../../components/Nav/Nav.js';
 import './Main.scss';
 import {
@@ -31,6 +31,16 @@ function Main() {
       like: false,
     },
   ]);
+
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/data/commentData.json', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setChats(data);
+  //     });
+  // });
 
   const pushId = useRef(3);
 

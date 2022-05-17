@@ -1,14 +1,30 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function Login() {
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   let navigate = useNavigate();
 
-  let [idValue, setIdValue] = useState('');
-  let [pswValue, setPsValue] = useState('');
+  const [inputValue, setInputValue] = useState({
+    id: '',
+    pw: '',
+  });
 
-  const isValid = idValue.includes('@') && pswValue.length >= 5;
+  const hendleInput = e => {
+    const { name, value } = e.target;
+    setInputValue({
+      ...inputValue,
+      [name]: value,
+    });
+  };
+
+  const { id, pw } = inputValue;
 
   return (
     <div className="loginPage">
@@ -16,17 +32,16 @@ function Login() {
         <h1 className="loginTitle">Westargram</h1>
         <div className="loginInputBox">
           <input
-            onChange={e => {
-              setIdValue(e.target.value);
-            }}
+            ref={inputRef}
+            onChange={hendleInput}
+            name="id"
             type="text"
             className="id"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
-            onChange={e => {
-              setPsValue(e.target.value);
-            }}
+            onChange={hendleInput}
+            name="pw"
             type="password"
             className="password"
             placeholder="비밀번호"
@@ -37,7 +52,7 @@ function Login() {
             navigate('/main-hs');
           }}
           className="loginBtn"
-          disabled={!isValid}
+          disabled={id.includes('@') && pw.length >= 5 ? false : true}
         >
           로그인
         </button>
