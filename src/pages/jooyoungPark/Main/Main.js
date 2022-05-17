@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import Nav from '../../../components/Nav/Nav.js';
 import './Main.scss';
-import '../../../styles/common.scss';
-import '../../../styles/reset.scss';
 import '../../../styles/variables.scss';
 import Commentbox from '../components/Commentbox.js';
+import { Link } from 'react-router-dom';
+import Rightbox from '../components/Rightbox.js';
 
 function Main() {
   const [value, setValue] = useState('');
@@ -49,16 +49,16 @@ function Main() {
             <div className="user_post_wrap">
               <div className="user_info">
                 <div className="user_img">
-                  <a href="/main-jy">
+                  <Link to="/main-jy">
                     <img
                       src="images/jooyoungPark/Main/mini_profile.jpg"
                       alt="/main-jy"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="user_name">
-                  <a href="/main-jy">cuteCat</a>
-                  <a href="/main-jy">귀여움이 세상을 지배한다.</a>
+                  <Link to="/main-jy">cuteCat</Link>
+                  <Link to="/main-jy">귀여움이 세상을 지배한다.</Link>
                 </div>
                 <button className="more_btn">더보기</button>
               </div>
@@ -83,12 +83,12 @@ function Main() {
                   <button>북마크</button>
                 </div>
                 <div className="like_count">
-                  <a href="/main-jy">
+                  <Link to="/main-jy">
                     <img
                       src="images/jooyoungPark/Main/mini_profile.jpg"
                       alt="/main-jy"
                     />
-                  </a>
+                  </Link>
                   <span className="like_desc">
                     lemon님 외 4명이 좋아합니다.
                   </span>
@@ -118,137 +118,77 @@ function Main() {
         <div className="main_right">
           <div className="user_info user_info_right">
             <div className="user_info_main">
-              <a href="/main-jy">
+              <Link to="/main-jy">
                 <img
                   src="images/jooyoungPark/Main/mini_profile.jpg"
                   alt="/main-jy"
                 />
-              </a>
+              </Link>
             </div>
             <div className="user_name">
-              <a href="/main-jy">wecode_bootcamp</a>
-              <a href="/main-jy">WeCode - 위코드</a>
+              <Link to="/main-jy">wecode_bootcamp</Link>
+              <Link to="/main-jy">WeCode - 위코드</Link>
             </div>
           </div>
 
           <div className="main_right_box">
             <div className="story_head">
               <p>스토리</p>
-              <a href="/main-jy">모두 보기</a>
+              <Link to="/main-jy">모두 보기</Link>
             </div>
             <ul>
               <li className="user_progile_mini">
-                <a href="/main-jy">
+                <Link to="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
-                </a>
+                </Link>
                 <div>
-                  <a href="/main-jy">alexishyuni</a>
+                  <Link to="/main-jy">alexishyuni</Link>
                   <p>2시간 전</p>
                 </div>
               </li>
               <li className="user_progile_mini">
-                <a href="/main-jy">
+                <Link to="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
-                </a>
+                </Link>
                 <div>
-                  <a href="/main-jy">alexishyuni</a>
+                  <Link to="/main-jy">alexishyuni</Link>
                   <p>2시간 전</p>
                 </div>
               </li>
               <li className="user_progile_mini">
-                <a href="/main-jy">
+                <Link to="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
-                </a>
+                </Link>
                 <div>
-                  <a href="/main-jy">alexishyuni</a>
+                  <Link to="/main-jy">alexishyuni</Link>
                   <p>2시간 전</p>
                 </div>
               </li>
               <li className="user_progile_mini">
-                <a href="/main-jy">
+                <Link to="/main-jy">
                   <img
                     src="images/jooyoungPark/Main/mini_profile.jpg"
                     alt="사용자 프로필 사진"
                   />
-                </a>
+                </Link>
                 <div>
-                  <a href="/main-jy">alexishyuni</a>
+                  <Link to="/main-jy">alexishyuni</Link>
                   <p>2시간 전</p>
                 </div>
               </li>
             </ul>
           </div>
 
-          <div className="main_right_box">
-            <div className="story_head">
-              <p>회원님을 위한 추천</p>
-              <a href="/main-jy">모두 보기</a>
-            </div>
-            <ul>
-              <li className="user_progile_mini">
-                <a href="/main-jy">
-                  <img
-                    src="images/jooyoungPark/Main/mini_profile.jpg"
-                    alt="사용자 프로필 사진"
-                  />
-                </a>
-                <div>
-                  <a href="/main-jy">alexishyuni</a>
-                  <p>회원님을 위한 추천</p>
-                </div>
-                <button className="follow">팔로우</button>
-              </li>
-              <li className="user_progile_mini">
-                <a href="/main-jy">
-                  <img
-                    src="images/jooyoungPark/Main/mini_profile.jpg"
-                    alt="사용자 프로필 사진"
-                  />
-                </a>
-                <div>
-                  <a href="/main-jy">__g90ng_dm</a>
-                  <p>회원님을 위한 추천</p>
-                </div>
-                <button className="follow">팔로우</button>
-              </li>
-              <li className="user_progile_mini">
-                <a href="/main-jy">
-                  <img
-                    src="images/jooyoungPark/Main/mini_profile.jpg"
-                    alt="사용자 프로필 사진"
-                  />
-                </a>
-                <div>
-                  <a href="/main-jy">hsu_koreanart2021</a>
-                  <p>회원님을 위한 추천</p>
-                </div>
-
-                <button className="follow">팔로우</button>
-              </li>
-              <li className="user_progile_mini">
-                <a href="/main-jy">
-                  <img
-                    src="images/jooyoungPark/Main/mini_profile.jpg"
-                    alt="사용자 프로필 사진"
-                  />
-                </a>
-                <div>
-                  <a href="/main-jy">kimmy_cafe</a>
-                  <p>회원님을 위한 추천</p>
-                </div>
-                <button className="follow">팔로우</button>
-              </li>
-            </ul>
-          </div>
+          <Rightbox />
         </div>
       </main>
     </div>
