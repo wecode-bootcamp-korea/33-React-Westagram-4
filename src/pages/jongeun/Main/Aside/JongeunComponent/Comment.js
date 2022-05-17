@@ -12,11 +12,11 @@ const Comment = ({ comment, a, i, setComment }) => {
     let copy = [...comment];
     for (let i = 0; i < copy.length; i++) {
       if (copy[i].id === id) {
-        if (copy[i].like === true) {
-          copy[i].like = false;
+        if (copy[i].isLiked === true) {
+          copy[i].isLiked = false;
           setComment(copy);
-        } else if (comment[i].like === false) {
-          copy[i].like = true;
+        } else if (comment[i].isLiked === false) {
+          copy[i].isLiked = true;
           setComment(copy);
         }
       }
@@ -33,13 +33,16 @@ const Comment = ({ comment, a, i, setComment }) => {
 
   return (
     <div className="comment_board">
-      <div className="comment">{a.content}</div>
+      <div className="comment_left">
+        <div className="comment_uerName">{a.userName}</div>
+        <div className="comment_content">{a.content}</div>
+      </div>
       <div className="comment_icon">
         <i
           onClick={id => {
             handleHeart(comment[i].id);
           }}
-          style={{ color: comment[i].like ? 'red' : 'black' }}
+          style={{ color: comment[i].isLiked ? 'red' : 'black' }}
           className="fa-solid fa-heart comment_heart"
         ></i>
         <i onClick={() => handleDelete()} className="fa-solid fa-trash-can"></i>

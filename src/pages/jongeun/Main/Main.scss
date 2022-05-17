@@ -183,6 +183,13 @@
     margin-top: 7px;
     max-width: 580px;
   }
+  .comment_left {
+    display: flex;
+    .comment_uerName {
+      margin-right: 10px;
+      font-weight: 700;
+    }
+  }
 }
 
 .comment_heart {

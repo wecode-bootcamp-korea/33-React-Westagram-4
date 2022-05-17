@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import SuggestUser from './Aside/JongeunComponent/SuggestUser';
@@ -6,7 +6,12 @@ import Comment from './Aside/JongeunComponent/Comment';
 
 function Main() {
   let [comment, setComment] = useState([
-    { content: '댓글달리는 곳', id: randomId(), like: false },
+    {
+      userName: 'jongeun',
+      content: '댓글달리는 곳',
+      id: randomId(),
+      isLiked: false,
+    },
   ]);
   let [input, setInput] = useState('');
 
@@ -30,6 +35,7 @@ function Main() {
   function postClick() {
     if (input.length > 0) {
       let task = {
+        userName: 'jongeun',
         id: randomId(),
         content: input,
         like: false,
@@ -40,6 +46,15 @@ function Main() {
     }
     setInput('');
   }
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setComment(data);
+      });
+  }, []);
 
   return (
     <div>
