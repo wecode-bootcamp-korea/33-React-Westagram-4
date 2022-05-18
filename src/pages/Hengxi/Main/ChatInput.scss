@@ -1,0 +1,31 @@
+.articleInputBox {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(180, 180, 180, 0.933);
+
+  .articleInput {
+    width: 90%;
+    line-height: 40px;
+    border: none;
+    outline: none;
+  }
+  .articlePost {
+    border: none;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    color: #1995f6;
+    background-color: white;
+    font-size: 14px;
+
+    &:disabled {
+      border: none;
+      width: 40px;
+      height: 30px;
+      color: #b2dffc;
+      background-color: white;
+      font-size: 14px;
+      cursor: default;
+    }
+  }
+}

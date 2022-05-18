@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "text": "리액트의 기초 알아보기",
+    "like": true
+  },
+  {
+    "id": 1,
+    "text": "westargram 만들기",
+    "like": true
+  },
+  {
+    "id": 2,
+    "text": "기능 구현 해보자...",
+    "like": false
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "profile": "/images/Hengxi/Main/profile.jpg",
+    "profileId": "wecode_bootcamp",
+    "profilePlace": "woCode - 위코드",
+    "mainImg": "/images/Hengxi/Main/mainImg2.avif"
+  },
+  {
+    "id": 1,
+    "profile": "/images/Hengxi/Main/profile.jpg",
+    "profileId": "wecode_bootcamp",
+    "profilePlace": "woCode - 위코드",
+    "mainImg": "/images/Hengxi/Main/mainImg2.avif"
+  },
+  {
+    "id": 2,
+    "profile": "/images/Hengxi/Main/profile.jpg",
+    "profileId": "wecode_bootcamp",
+    "profilePlace": "woCode - 위코드",
+    "mainImg": "/images/Hengxi/Main/mainImg2.avif"
+  }
+]
