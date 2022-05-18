@@ -21,7 +21,7 @@ function NavMenu() {
       </div>
       <span
         onClick={() => {
-          navigate('/');
+          navigate('/login-ju');
         }}
         className="navMenuLogout"
       >
