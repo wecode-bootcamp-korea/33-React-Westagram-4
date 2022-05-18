@@ -6,11 +6,6 @@ import '../../../styles/reset.scss';
 import '../../../styles/variables.scss';
 
 function Login() {
-  const navigate = useNavigate();
-  const goToMain = () => {
-    navigate('/main-jy');
-  };
-
   const [input, setInput] = useState({
     id: '',
     pw: '',
@@ -24,6 +19,43 @@ function Login() {
     });
   };
 
+  const navigate = useNavigate();
+  const goToMain = e => {
+    e.preventDefault();
+
+    // Lonin
+    fetch('http://10.58.4.219:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: input.id,
+        password: input.pw,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => {
+        if (result.ACCESS_TOKEN) {
+          localStorage.setItem('ACCESS_TOKEN', result.ACCESS_TOKEN);
+        } else {
+          alert('로그인 실패!');
+        }
+      });
+
+    // 회원가입
+    // fetch('http://10.58.4.219:8000/users/signup', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: input.id,
+    //     password: input.pw,
+    //     name: 'jooyoung',
+    //     mobile_number: '010-4063-9970',
+    //     date_of_birth: '2022-06-08',
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(result => console.log('결과: ', result));
+
+    navigate('/main-jy');
+  };
   return (
     <main className="login">
       <section className="login_form">
