@@ -5,32 +5,44 @@ import { useState } from 'react';
 
 function Login() {
   const navigate = useNavigate();
-  const goToMain = () => {
-    navigate('/main-ju');
-  };
 
   let [id, setId] = useState('');
   let [pw, setPw] = useState('');
   let [disabled, setDisabled] = useState(true);
   let [backgroundColor, setBackgroundColor] = useState('rgb(204, 231, 255)');
 
+  const saveToken = localStorage.getItem('token');
+
   function handleIdInput(e) {
     setId(e.target.value);
-    console.log('id', id);
   }
 
   function handlePwInput(e) {
     setPw(e.target.value);
-    console.log('pw', pw);
-    if (id.includes('@') && pw.length >= 4) {
-      setDisabled(false);
-    } else {
-      setDisabled(true);
-    }
+    id.includes('@') && pw.length >= 5 ? setDisabled(false) : setDisabled(true);
     id.includes('@') && pw.length >= 4
       ? setBackgroundColor('rgb(63, 157, 251)')
       : setBackgroundColor('rgb(204, 231, 255)');
   }
+
+  const goToMain = () => {
+    fetch('http://10.58.3.110:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        console.log('결과: ', result);
+        if (result.token) {
+          localStorage.setItem('token', result.token);
+        }
+      });
+    // navigate('/main-ju');
+    console.log(saveToken);
+  };
 
   return (
     <div>

@@ -38,7 +38,7 @@ function Main() {
         userName: 'jongeun',
         id: randomId(),
         content: input,
-        like: false,
+        isLiked: false,
       };
       let clickCopy = [...comment];
       clickCopy.unshift(task);
