@@ -5,11 +5,43 @@ import './Login.scss';
 function Login() {
   const navigate = useNavigate();
   const goToMain = () => {
-    navigate('/main-hm');
+    fetch('http://10.58.4.15:8000/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        id: idValue,
+        pw: pwValue,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result))
+      .then(response => {
+        if (response.access_token) {
+          localStorage.setItem('wtw-token', response.access_token);
+          navigate('/main-hm');
+        }
+      });
+
+    // fetch('http://10.58.4.15:8000/users/signup', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     id: idValue,
+    //     pw: pwValue,
+    //     name: 'hyunmin',
+    //     phonenumber: '01012341234',
+    //     personal: '최현민',
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(result => console.log('결과: ', result));
   };
 
   let [idValue, setIdValue] = useState('');
   let [pwValue, setPwValue] = useState('');
+  let token = localStorage.getItem('wtw-token') || '';
 
   const isValid = idValue.includes('@') && pwValue.length >= 5;
 

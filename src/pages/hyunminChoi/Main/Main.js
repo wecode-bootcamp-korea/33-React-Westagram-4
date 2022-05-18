@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FaComment,
   FaEllipsisV,
@@ -41,6 +41,15 @@ function Main() {
     setFeedComments(copyFeedComments);
     setComment('');
   };
+
+  useEffect(() => {
+    fetch('data/commentData.json', {})
+      .then(res => res.json())
+      .then(data => {
+        setFeedComments(data);
+      });
+  }, []);
+
   return (
     <div>
       <Nav />
@@ -91,11 +100,9 @@ function Main() {
                       <p>좋아요 1,092,182개</p>
                     </section>
                     <div className="commentBox">
-                      {feedComments.map((commentArr, i) => {
+                      {feedComments.map(commentArr => {
                         return (
                           <CommentList
-                            key={i}
-                            id={i}
                             userName={userName}
                             userComment={commentArr}
                             feedComments={feedComments}
@@ -119,7 +126,7 @@ function Main() {
                             : setIsValid(false);
                         }}
                         onKeyDown={e => {
-                          if (e.key == 'Enter' && isValid) {
+                          if (e.key === 'Enter' && isValid) {
                             post();
                           }
                         }}
