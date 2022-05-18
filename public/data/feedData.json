@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "userName": "apple",
+    "userPhoto": "images/hyunminChoi/Main/man1.avif",
+    "feedPhoto": "images/hyunminChoi/Main/stars.avif"
+  },
+  {
+    "id": 2,
+    "userName": "banana",
+    "userPhoto": "images/hyunminChoi/Main/developer.avif",
+    "feedPhoto": "images/hyunminChoi/Main/couple.avif"
+  }
+]
