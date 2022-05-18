@@ -10,6 +10,9 @@ function Login() {
   }, []);
 
   let navigate = useNavigate();
+  const goToMain = () => {
+    navigate('/main-hs');
+  };
 
   const [inputValue, setInputValue] = useState({
     id: '',
@@ -22,6 +25,23 @@ function Login() {
       ...inputValue,
       [name]: value,
     });
+  };
+
+  const SignUp = () => {
+    fetch('http://10.58.4.225:8000/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.access_token) {
+          localStorage.setItem('token', data.access_token);
+          goToMain();
+        }
+      });
   };
 
   const { id, pw } = inputValue;
@@ -49,7 +69,8 @@ function Login() {
         </div>
         <button
           onClick={() => {
-            navigate('/main-hs');
+            // navigate('/main-hs');
+            SignUp();
           }}
           className="loginBtn"
           disabled={id.includes('@') && pw.length >= 5 ? false : true}
