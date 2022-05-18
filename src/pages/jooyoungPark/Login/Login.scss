@@ -8,19 +8,19 @@ $border-style: 1px solid #ededed;
     @include flexCenter;
 
     .login_container {
+      margin: 0 auto;
+      padding: 40px 40px;
       width: 350px;
       height: 400px;
-      margin: 0 auto;
       border: $border-style;
       background-color: white;
       text-align: center;
-      padding: 40px 40px;
 
       p {
+        margin-top: 12px;
         color: rgba(0, 55, 107);
         font-size: 12px;
         line-height: 16px;
-        margin-top: 12px;
       }
 
       header {

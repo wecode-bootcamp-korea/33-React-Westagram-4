@@ -10,15 +10,18 @@ function Login() {
   const goToMain = () => {
     navigate('/main-jy');
   };
-  const [inputId, setInputId] = useState('');
-  const [inputPw, setInputPw] = useState('');
 
-  const handleIdInput = e => {
-    setInputId(e.target.value);
-  };
+  const [input, setInput] = useState({
+    id: '',
+    pw: '',
+  });
 
-  const handlePwInput = e => {
-    setInputPw(e.target.value);
+  const handlerInput = e => {
+    const { name, value } = e.target;
+    setInput({
+      ...input,
+      [name]: value,
+    });
   };
 
   return (
@@ -32,29 +35,29 @@ function Login() {
           <form action="">
             <input
               name="id"
-              onChange={handleIdInput}
+              onChange={handlerInput}
               className="user_id"
               type="email"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              value={inputId}
+              value={input.id}
             />
             <input
-              name="passwd"
-              onChange={handlePwInput}
+              name="pw"
+              onChange={handlerInput}
               className="user_pw"
               type="password"
               placeholder="비밀번호"
               minLength="6"
-              value={inputPw}
+              value={input.pw}
             />
             <button
               onClick={goToMain}
               className={
-                inputId.includes('@') && inputPw.length >= 5 ? 'active' : ''
+                input.id.includes('@') && input.pw.length >= 5 ? 'active' : ''
               }
               type="submit"
               disabled={
-                inputId.includes('@') && inputPw.length >= 5 ? false : true
+                input.id.includes('@') && input.pw.length >= 5 ? false : true
               }
             >
               로그인

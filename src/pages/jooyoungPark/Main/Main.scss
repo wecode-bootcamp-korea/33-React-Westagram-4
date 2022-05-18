@@ -32,15 +32,18 @@
     .feed {
       width: 614px;
       margin: 50px 50px 50px 0;
-      border: 1px solid #dbdbdb;
       .post {
+        border: 1px solid #dbdbdb;
+        margin-bottom: 50px;
         .user_post_wrap {
           .user_post_img {
-            // width: 614px;
             height: 614px;
             overflow: hidden;
 
             img {
+              object-fit: cover;
+              height: 100%;
+              width: 100%;
               height: 100%;
             }
           }
@@ -91,7 +94,7 @@
                   }
 
                   p {
-                    max-width: 30em;
+                    max-width: 25em;
                     flex-grow: 30;
                   }
 
@@ -232,7 +235,7 @@
   }
 
   .user_name {
-    flex-grow: 15;
+    flex-grow: 30;
 
     a {
       display: block;
