@@ -8,7 +8,8 @@ const Main = () => {
   const [replies, setReplies] = useState([]);
 
   const textChange = e => {
-    setReply(e.target.value);
+    const { value } = e.target;
+    setReply(value);
   };
 
   const handleSubmit = e => {
