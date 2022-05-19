@@ -7,6 +7,26 @@ const Login = () => {
 
   const goToMain = () => {
     navigate('/main-sy');
+    // fetch('http://10.58.3.175:8000/users/signin', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: id,
+    //     password: pw,
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(result => {
+    //     localStorage.setItem('token', result.access_token);
+    //     const access_token = localStorage.getItem('token');
+    //     console.log(access_token);
+    //     if (result.message === 'SUCCESS') {
+    //       alert('Success');
+    //       console.log(result);
+    //       navigate('/main-sy');
+    //     } else {
+    //       alert('Fail');
+    //     }
+    //   });
   };
 
   const [id, setId] = useState('');
@@ -40,32 +60,34 @@ const Login = () => {
     <>
       <div className="login-container">
         <h1>Westagram</h1>
-        <form>
-          <input
-            onChange={handleIdInput}
-            type="text"
-            placeholder="Phone number, username or email address"
-            className="login-input"
-            id="id"
-          />
-          <input
-            onChange={handlePwInput}
-            type="password"
-            placeholder="Password"
-            className="login-input"
-            id="pw"
-            onkeydown="activateBtn()"
-          />
-          <button
-            className={
-              isValidLogin ? 'login-btn-activated' : 'login-btn-deactivated'
-            }
-            type="submit"
-            onClick={goToMain}
-          >
-            Log In
-          </button>
-        </form>
+        {/* <form> */}
+        <input
+          onChange={handleIdInput}
+          type="text"
+          placeholder="Phone number, username or email address"
+          className="login-input"
+          // id="id"
+          value={id}
+        />
+        <input
+          onChange={handlePwInput}
+          type="password"
+          placeholder="Password"
+          className="login-input"
+          // id="pw"
+          value={pw}
+          // onKeyDown="activateBtn()"
+        />
+        <button
+          className={
+            isValidLogin ? 'login-btn-activated' : 'login-btn-deactivated'
+          }
+          type="submit"
+          onClick={goToMain}
+        >
+          Log In
+        </button>
+        {/* </form> */}
         <div className="divider">OR</div>
         <div className="fb-wrapper">
           <div className="fb">
