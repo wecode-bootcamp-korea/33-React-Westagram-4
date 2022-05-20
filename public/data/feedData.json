@@ -2,13 +2,19 @@
   {
     "id": 1,
     "userName": "apple",
-    "userPhoto": "images/Main/man1.avif",
-    "feedPhoto": "images/Main/stars.avif"
+    "userPhoto": "images/hyunminChoi/Main/man1.avif",
+    "feedPhoto": "images/hyunminChoi/Main/stars.avif"
   },
   {
     "id": 2,
     "userName": "banana",
-    "userPhoto": "images/Main/developer.avif",
-    "feedPhoto": "images/Main/couple.avif"
+    "userPhoto": "images/hyunminChoi/Main/developer.avif",
+    "feedPhoto": "images/hyunminChoi/Main/couple.avif"
+  },
+  {
+    "id": 3,
+    "userName": "tomato",
+    "userPhoto": "images/hyunminChoi/Main/man2.avif",
+    "feedPhoto": "images/hyunminChoi/Main/developer.avif"
   }
 ]
