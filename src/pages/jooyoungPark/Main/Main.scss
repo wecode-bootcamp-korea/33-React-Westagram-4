@@ -32,9 +32,11 @@
     .feed {
       width: 614px;
       margin: 50px 50px 50px 0;
+
       .post {
         border: 1px solid #dbdbdb;
         margin-bottom: 50px;
+
         .user_post_wrap {
           .user_post_img {
             height: 614px;
@@ -58,6 +60,7 @@
               div {
                 button {
                   margin-right: 5px;
+
                   img {
                     width: 24px;
                     height: 24px;
@@ -69,6 +72,7 @@
             .like_count {
               display: flex;
               align-items: center;
+
               img {
                 @include small-profile-size;
                 margin-right: 15px;
@@ -84,6 +88,7 @@
 
               .coment_new {
                 margin-bottom: 10px;
+
                 .coment_new_box {
                   display: flex;
                   justify-content: space-between;
@@ -125,6 +130,7 @@
 
           .comment_wrap {
             position: relative;
+
             input {
               box-sizing: border-box;
               width: 100%;
@@ -175,10 +181,12 @@
         .story_head {
           padding-bottom: 15px;
           @include flex-between;
+
           p {
             color: gray;
             font-weight: bold;
           }
+
           a {
             font-size: $smallFont;
             font-weight: bold;
@@ -190,6 +198,7 @@
             display: flex;
             position: relative;
             margin-bottom: 10px;
+
             img {
               @include small-profile-size;
               margin-right: 10px;
@@ -228,6 +237,7 @@
 
     .user_img {
       flex-grow: 1;
+
       img {
         @include small-profile-size;
       }
@@ -239,6 +249,7 @@
 
     a {
       display: block;
+
       &:first-child {
         font-size: $middleFont;
         font-weight: bold;

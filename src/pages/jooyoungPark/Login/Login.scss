@@ -72,9 +72,11 @@ $border-style: 1px solid #ededed;
 
         hr {
           width: 100px;
+
           &:first-child {
             margin-left: 0;
           }
+
           &:last-child {
             margin-right: 0;
           }

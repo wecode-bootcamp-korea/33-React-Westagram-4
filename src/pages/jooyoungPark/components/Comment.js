@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Comment = ({ comment, onRemove }) => {
+function Comment({ comment, onRemove }) {
   return (
     <li className="coment_new_box">
       <strong>p__jooyoung</strong>
@@ -15,6 +15,6 @@ const Comment = ({ comment, onRemove }) => {
       <span onClick={() => onRemove(comment.id)}>삭제</span>
     </li>
   );
-};
+}
 
 export default Comment;

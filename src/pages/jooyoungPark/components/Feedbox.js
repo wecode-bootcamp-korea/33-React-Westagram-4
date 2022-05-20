@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Commentbox from '../components/Commentbox.js';
 
-const Feedbox = ({ userId, desc, profileImg, feedImg }) => {
+function Feedbox({ userId, desc, profileImg, feedImg }) {
   useEffect(() => {
     fetch('data/commentData.json')
       .then(res => res.json())
@@ -11,35 +11,34 @@ const Feedbox = ({ userId, desc, profileImg, feedImg }) => {
       });
   }, []);
 
-  const [value, setValue] = useState('');
-  let [comment, setComment] = useState([]);
+  const [commentValue, setCommentValue] = useState('');
+  const [comment, setComment] = useState([]);
 
   const onChange = e => {
-    setValue(e.target.value);
+    setCommentValue(e.target.value);
   };
 
   const nextId = useRef(4);
   const onSubmit = e => {
     // 새로고침 X
-    // 제일 먼저 시작하는 것이 좋다고 멘토님께서 알려주셨어요! => 왜일까?!
     e.preventDefault();
     setComment([
       ...comment,
       {
         id: nextId.current,
-        text: value,
+        text: commentValue,
       },
     ]);
 
     // input 초기화
-    setValue('');
+    setCommentValue('');
 
     // id값 1씩 증가
     nextId.current += 1;
   };
 
   const onRemove = id => {
-    setComment(comment.filter(com => com.id !== id));
+    setComment(comment.filter(comment => comment.id !== id));
   };
 
   return (
@@ -98,7 +97,7 @@ const Feedbox = ({ userId, desc, profileImg, feedImg }) => {
             type="text"
             placeholder="댓글 달기..."
             required
-            value={value}
+            value={commentValue}
             onChange={onChange}
           />
           <button className="comment_enter">게시</button>
@@ -106,6 +105,6 @@ const Feedbox = ({ userId, desc, profileImg, feedImg }) => {
       </div>
     </article>
   );
-};
+}
 
 export default Feedbox;

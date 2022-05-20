@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Main.scss';
-import '../../../styles/variables.scss';
 import Nav from '../../../components/Nav/Nav.js';
 import Rightbox from '../components/Rightbox.js';
 import Feedbox from '../components/Feedbox';
@@ -21,13 +20,13 @@ function Main() {
 
       <main>
         <div className="feed">
-          {feed.map(f => (
+          {feed.map(({ id, userId, desc, profileImg, feedImg }) => (
             <Feedbox
-              key={f.id}
-              userId={f.userId}
-              desc={f.desc}
-              profileImg={f.profileImg}
-              feedImg={f.feedImg}
+              key={id}
+              userId={userId}
+              desc={desc}
+              profileImg={profileImg}
+              feedImg={feedImg}
             />
           ))}
         </div>

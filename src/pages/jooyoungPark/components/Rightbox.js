@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Rightbox = () => {
+function Rightbox() {
   return (
     <div className="main_right_box">
       <div className="story_head">
@@ -65,6 +65,6 @@ const Rightbox = () => {
       </ul>
     </div>
   );
-};
+}
 
 export default Rightbox;
