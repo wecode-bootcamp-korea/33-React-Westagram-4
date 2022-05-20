@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-$blue: #0095F6;
-$lightBlue: #BFE0FD;
-$backgroundColor: #FAFAFA;
+$blue: #0095f6;
+$lightBlue: #bfe0fd;
+$backgroundColor: #fafafa;
 $smallFont: 13px;
 $middleFont: 16px;
 $largeFont: 20px;
 
 @mixin flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin titleFont {
-    font-family: 'Lobster', cursive;
+  font-family: 'Lobster', cursive;
 }

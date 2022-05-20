@@ -1,0 +1,71 @@
+@import '../../../styles/variables.scss';
+
+@mixin loginBtn {
+  width: 268px;
+  height: 30px;
+  border: none;
+  color: #ffffff;
+}
+
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fafafa;
+
+  .loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 348px;
+    height: 374px;
+    border: 1px solid #dbdbdb;
+    background-color: #ffffff;
+  }
+
+  .logo {
+    position: relative;
+    width: 100%;
+    height: 51px;
+
+    p {
+      @include titleFont;
+      font-size: 40px;
+      text-align: center;
+    }
+  }
+
+  .member {
+    input {
+      display: block;
+      width: 268px;
+      height: 38px;
+      padding: 8px 10px;
+      margin: 5px;
+      border: 1px solid #dbdbdb;
+    }
+  }
+
+  .login {
+    .inactive {
+      @include loginBtn;
+      background-color: #c0dffd;
+    }
+
+    .active {
+      @include loginBtn;
+      background-color: #0095f6;
+    }
+  }
+
+  .help {
+    display: flex;
+    font-size: 12px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+}

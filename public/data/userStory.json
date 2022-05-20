@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "userName": "ironman",
+    "img": "images/hyunminChoi/Main/man1.avif"
+  },
+  {
+    "id": 2,
+    "userName": "aquaman",
+    "img": "images/hyunminChoi/Main/man1.avif"
+  },
+  {
+    "id": 3,
+    "userName": "superman",
+    "img": "images/hyunminChoi/Main/man1.avif"
+  }
+]
