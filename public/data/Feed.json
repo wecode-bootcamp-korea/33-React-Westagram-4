@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "userId": "cutecat",
+    "desc": "고양이귀여워",
+    "profileImg": "images/jooyoungPark/Main/mini_profile.jpg",
+    "feedImg": "images/jooyoungPark/Main/cat.jpg"
+  },
+  {
+    "id": 2,
+    "userId": "cutecat",
+    "desc": "고양이귀여워",
+    "profileImg": "images/jooyoungPark/Main/mini_profile.jpg",
+    "feedImg": "images/jooyoungPark/Main/cat2.jpg"
+  },
+  {
+    "id": 3,
+    "userId": "cutecat",
+    "desc": "고양이귀여워",
+    "profileImg": "images/jooyoungPark/Main/mini_profile.jpg",
+    "feedImg": "images/jooyoungPark/Main/cat3.jpg"
+  }
+]

@@ -1,0 +1,94 @@
+@import '../../../styles/variables.scss';
+
+$border-style: 1px solid #ededed;
+
+.login {
+  .login_form {
+    height: 100vh;
+    @include flexCenter;
+
+    .login_container {
+      margin: 0 auto;
+      padding: 40px 40px;
+      width: 350px;
+      height: 400px;
+      border: $border-style;
+      background-color: white;
+      text-align: center;
+
+      p {
+        margin-top: 12px;
+        color: rgba(0, 55, 107);
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      header {
+        h1 {
+          @include titleFont;
+          font-size: 40px;
+          margin-bottom: 50px;
+        }
+      }
+
+      form {
+        input {
+          display: block;
+          width: 100%;
+          border: $border-style;
+          border-radius: 5px;
+          padding: 10px 5px;
+          margin-bottom: 5px;
+          background-color: #fafafa;
+        }
+
+        button {
+          width: 100%;
+          padding: 5px;
+          margin: 10px 0;
+          font-size: 14px;
+          font-weight: bold;
+          color: white;
+          background-color: $lightBlue;
+          border: none;
+          border-radius: 5px;
+        }
+
+        button.active {
+          background-color: $blue;
+        }
+      }
+
+      .and {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: gray;
+        margin: 15px 0;
+
+        span {
+          font-size: 13px;
+        }
+
+        hr {
+          width: 100px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .facebook_login {
+        a {
+          font-weight: bold;
+          color: #385185;
+        }
+      }
+    }
+  }
+}
